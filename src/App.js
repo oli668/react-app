@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
+import Button from 'antd/es/button';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Button type="primary">Button</Button>
       我是李佳来， 今天是{date.toLocaleTimeString()}
     </div>
   );
