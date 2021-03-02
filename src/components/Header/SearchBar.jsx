@@ -1,4 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import debounce from "lodash/debounce";
+import { Transition } from "@headlessui/react";
+
+const LoaderIcon = () => {
+  return (
+    <svg
+      class="icon-loader"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle class="spinner-circle" cx="50" cy="50" r="45" />
+    </svg>
+  );
+};
 
 const SearchIcon = () => {
   return (
@@ -19,32 +33,114 @@ const SearchIcon = () => {
 };
 
 export const SearchBar = () => {
-  const [isExtend, extendSearchBar] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
+  const [currInput, setCurrInput] = useState("");
+  const [results, setResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+
+  const debounceSearch = useRef(
+    debounce((currInput) => {
+      fetchApi(currInput).then((results) => {
+        setIsSearching(false);
+        console.log(results);
+        setResults(results);
+      });
+    }, 1000)
+  );
+
+  const parseStringHtml = (str, originTerm) => {
+    const term = originTerm.toLowerCase();
+    const str1 =
+      str && str.replace(new RegExp(term, "gi"), (match) => `<b>${match}</b>`);
+    const delim = `<b>${term}</b>`;
+    const newstring = str1.split(delim);
+    const res = [];
+    const len = newstring.length;
+    for (let i = 0; i < len; i++) {
+      res.push(newstring[i]);
+      if (i !== len - 1)
+        res.push(
+          <b key={i} class="text-warning">
+            {term}
+          </b>
+        );
+    }
+    return res;
+  };
+
+  const fetchApi = () => {
+    return fetch(
+      "https://jsonplaceholder.typicode.com/posts"
+    ).then((response) => response.json());
+  };
+
+  useEffect(() => {
+    if (currInput.length >= 3) {
+      setIsSearching(true);
+      debounceSearch.current(currInput);
+    } else {
+      setResults([]);
+    }
+  }, [currInput]);
+
   return (
-    <div class="pt-3 transform transition delay-300 ease-in-out">
+    <div class="md:pt-3 pt-0">
       <div
-        class={`${
-          isExtend ? "w-80" : "w-64"
-        } transform transition delay-5000 ease-in-out bg-white flex items-center rounded-xl shadow-xl h-11`}
+        class={`${isFocus ? "md:w-80" : "md:w-60"} ${
+          results.length > 0 ? "rounded-b-none rounded-bl-none" : ""
+        } flex items-center rounded-md shadow-xl h-11`}
       >
         <input
-          class="rounded-l-full w-full text-gray-700 leading-tight p-3 focus:outline-none"
+          class="rounded-md w-full text-black-light leading-tight p-3 focus:outline-none"
           id="search"
           type="text"
+          value={currInput}
+          autoComplete="off"
           onFocus={() => {
-            extendSearchBar(true);
+            setIsFocus(true);
+          }}
+          onChange={(e) => {
+            setCurrInput(e.target.value);
           }}
           onBlur={() => {
-            extendSearchBar(false);
+            setIsFocus(false);
+            setResults([]);
+            setCurrInput("");
           }}
           placeholder="Search"
         />
         <div class="p-4">
-          <button class="bg-blue-100 text-black rounded-full p-2 hover:bg-blue-400 focus:outline-none w-7 h10 flex items-center justify-center">
-            <SearchIcon />
+          <button class="text-black-light rounded-full p-2 focus:outline-none w-10 md:h10 h6 flex items-center justify-center">
+            {isSearching ? <LoaderIcon /> : <SearchIcon />}
           </button>
         </div>
       </div>
+      <Transition
+        show={currInput.length >= 2}
+        enter="transition-opacity duration-75"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div class="w-60 md:w-80 bg-gray flex shadow-sm items-center absolute z-50">
+          <div>
+            {results.length > 0 &&
+              isFocus &&
+              results.slice(0, 10).map((item, id) => {
+                return (
+                  <li
+                    key={id}
+                    class=" cursor-pointer text-black-light p-3 px-4 text-left list-none hover:font-extrabold font-semibold hover:bg-gray-dark"
+                  >
+                    {parseStringHtml(item.title, currInput)}
+                  </li>
+                );
+              })}
+          </div>
+        </div>
+      </Transition>
     </div>
   );
 };
