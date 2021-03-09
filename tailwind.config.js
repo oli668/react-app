@@ -2,6 +2,14 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    minWidth: {
+      card_md: "140px",
+      card: "253px",
+    },
+    maxWidth: {
+      card_md: "225px",
+      card: "253px",
+    },
     extend: {
       transitionProperty: {
         width: "width",

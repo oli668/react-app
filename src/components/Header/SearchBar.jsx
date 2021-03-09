@@ -5,11 +5,11 @@ import { Transition } from "@headlessui/react";
 const LoaderIcon = () => {
   return (
     <svg
-      class="icon-loader"
+      className="icon-loader"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle class="spinner-circle" cx="50" cy="50" r="45" />
+      <circle className="spinner-circle" cx="50" cy="50" r="45" />
     </svg>
   );
 };
@@ -60,7 +60,7 @@ export const SearchBar = () => {
       res.push(newstring[i]);
       if (i !== len - 1)
         res.push(
-          <b key={i} class="text-warning">
+          <b key={i} className="text-warning">
             {term}
           </b>
         );
@@ -84,14 +84,14 @@ export const SearchBar = () => {
   }, [currInput]);
 
   return (
-    <div class="md:pt-3 pt-0">
+    <div className="md:pt-3 pt-0 w-full relative">
       <div
-        class={`${isFocus ? "md:w-80" : "md:w-60"} ${
+        className={`${
           results.length > 0 ? "rounded-b-none rounded-bl-none" : ""
         } flex items-center rounded-md shadow-xl h-11`}
       >
         <input
-          class="rounded-md w-full text-black-light leading-tight p-3 focus:outline-none"
+          className="rounded-md w-full text-black-light leading-tight p-3 focus:outline-none"
           id="search"
           type="text"
           value={currInput}
@@ -109,8 +109,8 @@ export const SearchBar = () => {
           }}
           placeholder="Search"
         />
-        <div class="p-4">
-          <button class="text-black-light rounded-full p-2 focus:outline-none w-10 md:h10 h6 flex items-center justify-center">
+        <div className="p-4">
+          <button className="text-black-light rounded-full p-2 focus:outline-none w-10 md:h10 h6 flex items-center justify-center">
             {isSearching ? <LoaderIcon /> : <SearchIcon />}
           </button>
         </div>
@@ -124,7 +124,7 @@ export const SearchBar = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div class="w-60 md:w-80 bg-gray flex shadow-sm items-center absolute z-50">
+        <div className="w-full md:w-full bg-gray flex shadow-sm items-center absolute z-50">
           <div>
             {results.length > 0 &&
               isFocus &&
@@ -132,7 +132,7 @@ export const SearchBar = () => {
                 return (
                   <li
                     key={id}
-                    class=" cursor-pointer text-black-light p-3 px-4 text-left list-none hover:font-extrabold font-semibold hover:bg-gray-dark"
+                    className=" cursor-pointer text-black-light p-3 px-4 text-left list-none hover:font-extrabold font-semibold hover:bg-gray-dark"
                   >
                     {parseStringHtml(item.title, currInput)}
                   </li>
