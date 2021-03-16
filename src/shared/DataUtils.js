@@ -12,3 +12,12 @@ export const flattenNestedObject = (tgt, prefix) => {
     return messages;
   }, {});
 };
+
+export const processingIBAcocktails = (data) => {
+  // data.map((item) => {
+  //   let newItem = {}
+  //   newItem.name = item.name
+  //   newItem.base =
+  //   return newItem
+  // });
+};
