@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Card } from "components/Card/Card";
 import { cardData } from "components/Card/data.js";
 import { useIntl } from "react-intl";
@@ -10,7 +10,7 @@ import { Divider } from "components/Divider/Divider";
 
 const HomePage = () => {
   const intl = useIntl();
-  const cocktails = useSelector((store) => store.cocktails);
+  // const cocktails = useSelector((store) => store.cocktails);
   // const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +22,20 @@ const HomePage = () => {
     // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(cocktails);
+  const getHotCocktails = () => {
+    return cardData
+      .sort((a, b) => {
+        return b.like - a.like;
+      })
+      .slice(0, 8);
+  };
+  const getSummerCocktails = () => {
+    return cardData
+      .sort((a, b) => {
+        return b.like - a.like;
+      })
+      .slice(-8);
+  };
   return (
     <div className="">
       <Divider />
@@ -37,7 +50,21 @@ const HomePage = () => {
         <Divider size="xs" />
         <div className="w-3/4 my-0 mx-auto">
           <div className="relative inline-flex flex-wrap m-auto justify-evenly">
-            {cardData.map((data, id) => {
+            {getHotCocktails().map((data, id) => {
+              return <Card key={id} {...data} />;
+            })}
+          </div>
+        </div>
+      </div>
+      <Divider size="sm" />
+      <div>
+        <div className="w-3/4 my-0 mx-auto text-2xl font-semibold">
+          {intl.formatMessage({ id: "ENJOY_SUMMER" })}
+        </div>
+        <Divider size="xs" />
+        <div className="w-3/4 my-0 mx-auto">
+          <div className="relative inline-flex flex-wrap m-auto justify-evenly">
+            {getSummerCocktails().map((data, id) => {
               return <Card key={id} {...data} />;
             })}
           </div>

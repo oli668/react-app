@@ -11,7 +11,6 @@ export const Card = (props) => {
   return (
     <div
       className={`py-4 px-2 h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md`}
-      onClick={() => history.push(`${ROUTES.DETAILS}/${id}`)}
     >
       <div
         className={`relative group`}
@@ -21,6 +20,7 @@ export const Card = (props) => {
         onMouseLeave={() => {
           setIsShowOverlay(false);
         }}
+        onClick={() => history.push(`${ROUTES.DETAILS}/${id}`)}
       >
         <img
           className="shadow-lg group-hover:opacity-20 rounded-t-md max-w-sm flex w-full opacity-100 h-auto transition: 0.5s ease-in-out"
@@ -95,7 +95,7 @@ export const Card = (props) => {
         )}
       </div>
       <div className="max-w-sm max-h-48 overflow-hidden">
-        <div className="py-4 px-4 bg-gray rounded-b-md fd-cl group-hover:opacity-25">
+        <div className="flex justify-between py-4 px-4 bg-gray rounded-b-md fd-cl group-hover:opacity-25">
           <span className="block p-1 text-lg text-gray-800 font-bold tracking-wide">
             {language === "CH" ? name.ch : name.en}
           </span>
