@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { ROUTES } from "routes.js";
+
 export const Card = (props) => {
+  const history = useHistory();
   const [isShowOverlay, setIsShowOverlay] = useState(false);
   const language = useSelector((store) => store.header.language);
-  const { name, mood, img, taste } = props;
+  const { name, mood, img, taste, id } = props;
   return (
     <div
       className={`py-4 px-2 h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md`}
+      onClick={() => history.push(`${ROUTES.DETAILS}/${id}`)}
     >
       <div
         className={`relative group`}
@@ -19,7 +24,7 @@ export const Card = (props) => {
       >
         <img
           className="shadow-lg group-hover:opacity-20 rounded-t-md max-w-sm flex w-full opacity-100 h-auto transition: 0.5s ease-in-out"
-          src={require("images/4.jpg")}
+          src={`https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/cocktails-good/img-${img}.webp`}
           alt="none"
         />
         <div className="absolute top-1/2 left-1/2 opacity-0 "></div>

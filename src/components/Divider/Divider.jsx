@@ -9,6 +9,8 @@ export const Divider = (props) => {
       return <div className="w-full h-8"></div>;
     case "md":
       return <div className="w-full h-16"></div>;
+    case "lg":
+      return <div className="w-full h-28"></div>;
     default:
       return <div className="w-full h-20"></div>;
   }
