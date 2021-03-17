@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from "react";
+import React, { useMemo, useEffect } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage/home";
 import { BrowserRouter, useHistory, Switch, Route } from "react-router-dom";
@@ -12,12 +12,12 @@ import { IntlProvider } from "react-intl";
 import languages from "translations/translations";
 import { flattenNestedObject } from "shared/DataUtils";
 import { useSelector } from "react-redux";
-import { loginCloudServer } from "api/api";
+// import { loginCloudServer } from "api/api";
 import { Divider } from "components/Divider/Divider";
 
 const App = () => {
   const history = useHistory();
-  const [isLogin, setLoginStatus] = useState();
+  // const [isLogin, setLoginStatus] = useState();
   const language = useSelector((store) => store.header.language);
   const flatLanguagues = useMemo(
     () => flattenNestedObject(languages[language]),
@@ -30,7 +30,7 @@ const App = () => {
     // });
   }, []);
   console.log("render");
-  return !isLogin ? (
+  return (
     <BrowserRouter history={history}>
       <IntlProvider
         locale="fr"
@@ -61,7 +61,7 @@ const App = () => {
         </div>
       </IntlProvider>
     </BrowserRouter>
-  ) : null;
+  );
 };
 
 export default App;
