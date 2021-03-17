@@ -1,0 +1,9 @@
+{
+    "name": "data_search",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "@cloudbase/js-sdk": "^1.4.1",
+        "@cloudbase/node-sdk": "^2.5.0"
+    }
+}
