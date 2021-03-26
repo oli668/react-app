@@ -84,11 +84,11 @@ export const SearchBar = () => {
   }, [currInput]);
 
   return (
-    <div className="md:pt-3 pt-0 w-full relative">
+    <div className="pt-0 w-full relative">
       <div
         className={`${
           results.length > 0 ? "rounded-b-none rounded-bl-none" : ""
-        } flex items-center rounded-md shadow-xl h-11`}
+        } flex items-center rounded-md shadow-lg h-11`}
       >
         <input
           className="rounded-md w-full text-black-light leading-tight p-3 focus:outline-none"

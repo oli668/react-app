@@ -6,7 +6,7 @@ import { ROUTES } from "routes.js";
 export const Card = (props) => {
   const history = useHistory();
   const [isShowOverlay, setIsShowOverlay] = useState(false);
-  const language = useSelector((store) => store.header.language);
+  const language = useSelector((store) => store.header.language).toLowerCase();
   const { name, mood, img, taste, id } = props;
   return (
     <div
@@ -94,10 +94,10 @@ export const Card = (props) => {
           </div>
         )}
       </div>
-      <div className="max-w-sm max-h-48 overflow-hidden">
+      <div className="max-w-sm max-h-48 overflow-hidden shadow-3xl">
         <div className="flex justify-between py-4 px-4 bg-gray rounded-b-md fd-cl group-hover:opacity-25">
-          <span className="block p-1 text-lg text-gray-800 font-bold tracking-wide">
-            {language === "CH" ? name.ch : name.en}
+          <span className="block p-1 text-lg font-bold tracking-wide">
+            {name[language]}
           </span>
         </div>
       </div>

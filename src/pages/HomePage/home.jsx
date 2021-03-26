@@ -37,11 +37,7 @@ const HomePage = () => {
       .slice(-8);
   };
   return (
-    <div className="">
-      <Divider />
-      <div className="w-3/4 my-0 mx-auto">
-        <SearchBar></SearchBar>
-      </div>
+    <div>
       <Divider size="sm" />
       <div>
         <div className="w-3/4 my-0 mx-auto text-2xl font-semibold">

@@ -1,5 +1,9 @@
 {
     "HOT_COCKTAILS": "Hot Cocktails",
     "ENJOY_SUMMER": "Eojoy Summer",
-    "LANGUAGES": "English"
+    "DETAILS_INGREDIENTS":"Ingredients",
+    "DETAILS_DESCRIPTION":"Description",
+    "DETAILS_PREPATION":"Prepation",
+    "LANGUAGES": "English",
+    "DETAILS_NEED":"You may need"
 }
