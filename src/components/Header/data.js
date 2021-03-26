@@ -1,5 +1,4 @@
 export const navItems = [
-  { id: "home", content: "首页", name: "", isSubmenu: false },
   {
     id: "categories",
     content: "分类",

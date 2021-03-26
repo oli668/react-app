@@ -1,7 +1,7 @@
 export const cardData = [
   {
     name: {
-      en: "Vesper",
+      us: "Vesper",
       ch: "邦女郎",
     },
     id: "aa8381956049978f0012e16421d62e54",
@@ -12,7 +12,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Bacardi",
+      us: "Bacardi",
       ch: "百加得",
     },
     id: "aa8381956049978f0012e165747b8199",
@@ -23,7 +23,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Negroni",
+      us: "Negroni",
       ch: "尼格罗尼",
     },
     id: "aa8381956049978f0012e1662af0eece",
@@ -34,7 +34,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Rose",
+      us: "Rose",
       ch: "玫瑰",
     },
     id: "aa8381956049978f0012e1676593f177",
@@ -45,7 +45,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Old Fashioned",
+      us: "Old Fashioned",
       ch: "古典酒",
     },
     id: "aa8381956049978f0012e1687bed1452",
@@ -56,7 +56,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Tuxedo",
+      us: "Tuxedo",
       ch: "燕尾服",
     },
     id: "aa8381956049978f0012e169085015c8",
@@ -67,7 +67,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Mojito",
+      us: "Mojito",
       ch: "莫吉托",
     },
     id: "aa8381956049978f0012e16a7ec9f1a3",
@@ -78,7 +78,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Horse's Neck",
+      us: "Horse's Neck",
       ch: "金马颈",
     },
     id: "aa8381956049978f0012e16b6ea3763e",
@@ -89,7 +89,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Planter's Punch",
+      us: "Planter's Punch",
       ch: "拓荒者宾治",
     },
     id: "aa8381956049978f0012e16c7bdf742d",
@@ -100,7 +100,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Sea Breeze",
+      us: "Sea Breeze",
       ch: "海風",
     },
     id: "aa8381956049978f0012e16d79147119",
@@ -111,7 +111,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Pisco Sour",
+      us: "Pisco Sour",
       ch: "皮斯科酸酒",
     },
     id: "aa8381956049978f0012e16e5e6ed8f2",
@@ -122,7 +122,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Mimosa",
+      us: "Mimosa",
       ch: "含羞草",
     },
     id: "aa8381956049978f0012e17202d9e317",
@@ -133,18 +133,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "Long Island Iced Tea",
+      us: "Long Island Iced Tea",
       ch: "长岛冰茶",
     },
     id: "aa8381956049978f0012e16f02928738",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e16f02928738",
-    like: 92,
+    like: 98,
   },
   {
     name: {
-      en: "Clover Club",
+      us: "Clover Club",
       ch: "三叶草俱乐部",
     },
     id: "aa8381956049978f0012e1704a2ffb06",
@@ -155,7 +155,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Angel Face",
+      us: "Angel Face",
       ch: "天使面孔",
     },
     id: "aa8381956049978f0012e1715fb19dfe",
@@ -166,7 +166,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Whiskey Sour",
+      us: "Whiskey Sour",
       ch: "威士忌酸",
     },
     id: "aa8381956049978f0012e1731a5dfb0e",
@@ -177,7 +177,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Screwdriver",
+      us: "Screwdriver",
       ch: "螺丝刀",
     },
     id: "aa8381956049978f0012e1744eb2f4fd",
@@ -188,29 +188,29 @@ export const cardData = [
   },
   {
     name: {
-      en: "Cuba Libre",
+      us: "Cuba Libre",
       ch: "自由古巴",
     },
     id: "aa8381956049978f0012e17535c739d1",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e17535c739d1",
-    like: 33,
+    like: 96,
   },
   {
     name: {
-      en: "Manhattan",
+      us: "Manhattan",
       ch: "曼哈顿",
     },
     id: "aa8381956049978f0012e176656572cc",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e176656572cc",
-    like: 46,
+    like: 96,
   },
   {
     name: {
-      en: "Porto Flip",
+      us: "Porto Flip",
       ch: "波菲利普",
     },
     id: "aa8381956049978f0012e17701de0466",
@@ -221,7 +221,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Gin Fizz",
+      us: "Gin Fizz",
       ch: "金菲士",
     },
     id: "aa8381956049978f0012e1785c724bbe",
@@ -232,7 +232,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Espresso Martini",
+      us: "Espresso Martini",
       ch: "咖啡马天尼",
     },
     id: "aa8381956049978f0012e17927f8ad95",
@@ -243,7 +243,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Margarita",
+      us: "Margarita",
       ch: "玛格丽塔",
     },
     id: "aa8381956049978f0012e17a7d5a4627",
@@ -254,18 +254,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "French 75",
+      us: "Frusch 75",
       ch: "法75",
     },
     id: "aa8381956049978f0012e17b583f8aa0",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e17b583f8aa0",
-    like: 45,
+    like: 95,
   },
   {
     name: {
-      en: "Yellow Bird",
+      us: "Yellow Bird",
       ch: "莺歌",
     },
     id: "aa8381956049978f0012e17c01d29175",
@@ -276,18 +276,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "Pina Colada",
+      us: "Pina Colada",
       ch: "椰林飘香",
     },
     id: "aa8381956049978f0012e17d6871917b",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e17d6871917b",
-    like: 68,
+    like: 96,
   },
   {
     name: {
-      en: "Aviation",
+      us: "Aviation",
       ch: "飞行",
     },
     id: "aa8381956049978f0012e17e2ade34ee",
@@ -298,7 +298,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Bellini",
+      us: "Bellini",
       ch: "贝里尼",
     },
     id: "aa8381956049978f0012e17f5cf02b1a",
@@ -309,7 +309,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Grasshopper",
+      us: "Grasshopper",
       ch: "绿色蚱蜢",
     },
     id: "aa8381956049978f0012e1806199f86c",
@@ -320,18 +320,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "Tequila Sunrise",
+      us: "Tequila Sunrise",
       ch: "龙舌兰日出",
     },
     id: "aa8381956049978f0012e1814c5b9f46",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e1814c5b9f46",
-    like: 59,
+    like: 96,
   },
   {
     name: {
-      en: "Daiquiri",
+      us: "Daiquiri",
       ch: "戴吉利",
     },
     id: "aa8381956049978f0012e18265aa4f60",
@@ -342,7 +342,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Rusty Nail",
+      us: "Rusty Nail",
       ch: "锈丁",
     },
     id: "aa8381956049978f0012e1830487d253",
@@ -353,7 +353,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "B52",
+      us: "B52",
       ch: "B52",
     },
     id: "aa8381956049978f0012e18401eb5a94",
@@ -364,7 +364,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Stinger",
+      us: "Stinger",
       ch: "毒刺",
     },
     id: "aa8381956049978f0012e1851013205d",
@@ -375,18 +375,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "Golden Dream",
+      us: "Goldus Dream",
       ch: "金色梦幻",
     },
     id: "aa8381956049978f0012e18634dcb4b1",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e18634dcb4b1",
-    like: 97,
+    like: 79,
   },
   {
     name: {
-      en: "God Mother",
+      us: "God Mother",
       ch: "教母",
     },
     id: "aa8381956049978f0012e18742035fa6",
@@ -397,7 +397,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Spritz Veneziano",
+      us: "Spritz Vuseziano",
       ch: "威尼斯火花",
     },
     id: "aa8381956049978f0012e1884d2a5019",
@@ -408,7 +408,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Bramble",
+      us: "Bramble",
       ch: "荆棘",
     },
     id: "aa8381956049978f0012e18951bae424",
@@ -419,7 +419,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Alexander",
+      us: "Alexander",
       ch: "亚历山大",
     },
     id: "aa8381956049978f0012e18a3d9aa060",
@@ -430,7 +430,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Lemon Drop Martini",
+      us: "Lemon Drop Martini",
       ch: "柠檬球",
     },
     id: "aa8381956049978f0012e18b199f325c",
@@ -441,7 +441,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "French Martini",
+      us: "Frusch Martini",
       ch: "法式马天尼",
     },
     id: "aa8381956049978f0012e18c727264c1",
@@ -452,7 +452,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Black Russian",
+      us: "Black Russian",
       ch: "黑俄罗斯",
     },
     id: "aa8381956049978f0012e18d5ebbc620",
@@ -463,18 +463,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "Bloody Mary",
+      us: "Bloody Mary",
       ch: "血腥玛丽",
     },
     id: "aa8381956049978f0012e18e08deece7",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e18e08deece7",
-    like: 43,
+    like: 97,
   },
   {
     name: {
-      en: "Mai-tai",
+      us: "Mai-tai",
       ch: "迈泰",
     },
     id: "aa8381956049978f0012e18f3e0cd28e",
@@ -485,7 +485,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Barracuda",
+      us: "Barracuda",
       ch: "梭子鱼",
     },
     id: "aa8381956049978f0012e1903965e757",
@@ -496,7 +496,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Sex on the Beach",
+      us: "Sex on the Beach",
       ch: "性感海滩",
     },
     id: "aa8381956049978f0012e191163973c7",
@@ -507,7 +507,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Monkey Gland",
+      us: "Monkey Gland",
       ch: "猴上腺素",
     },
     id: "aa8381956049978f0012e1926bdd1ebd",
@@ -518,7 +518,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Derby",
+      us: "Derby",
       ch: "德比",
     },
     id: "aa8381956049978f0012e1936ef2c315",
@@ -529,7 +529,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Sidecar",
+      us: "Sidecar",
       ch: "边车",
     },
     id: "aa8381956049978f0012e1940ff1c29b",
@@ -540,7 +540,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Irish Coffee",
+      us: "Irish Coffee",
       ch: "爱尔兰咖啡",
     },
     id: "aa8381956049978f0012e19574c7be24",
@@ -551,7 +551,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Sazerac",
+      us: "Sazerac",
       ch: "萨泽拉克",
     },
     id: "aa8381956049978f0012e1964d32b81a",
@@ -562,7 +562,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Americano",
+      us: "Americano",
       ch: "美国佬",
     },
     id: "aa8381956049978f0012e197599b985f",
@@ -573,18 +573,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "Singapore Sling",
+      us: "Singapore Sling",
       ch: "新加坡司令",
     },
     id: "aa8381956049978f0012e19857388ddc",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e19857388ddc",
-    like: 45,
+    like: 98,
   },
   {
     name: {
-      en: "French Connection",
+      us: "Frusch Connection",
       ch: "法兰西集团",
     },
     id: "aa8381956049978f0012e19955670bd3",
@@ -595,7 +595,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Moscow Mule",
+      us: "Moscow Mule",
       ch: "莫斯科骡子",
     },
     id: "aa8381956049978f0012e19a580d72f2",
@@ -606,7 +606,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "John Collins",
+      us: "John Collins",
       ch: "约翰·柯林斯",
     },
     id: "aa8381956049978f0012e19b1dd17ace",
@@ -617,7 +617,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Kir",
+      us: "Kir",
       ch: "基尔",
     },
     id: "aa8381956049978f0012e19c19cb51c9",
@@ -628,7 +628,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Mint Julep",
+      us: "Mint Julep",
       ch: "薄荷茱莉普",
     },
     id: "aa8381956049978f0012e19d00f81371",
@@ -639,7 +639,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Tommy's Margarita",
+      us: "Tommy's Margarita",
       ch: "汤米的玛格丽特",
     },
     id: "aa8381956049978f0012e19e158e39bc",
@@ -650,7 +650,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Paradise",
+      us: "Paradise",
       ch: "天堂",
     },
     id: "aa8381956049978f0012e19f442dbf8c",
@@ -661,7 +661,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Dirty Martini",
+      us: "Dirty Martini",
       ch: "非凡马天尼",
     },
     id: "aa8381956049978f0012e1a0795fc1b8",
@@ -672,7 +672,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Champagne Cocktail",
+      us: "Champagne Cocktail",
       ch: "香槟鸡尾酒",
     },
     id: "aa8381956049978f0012e1a11e6d60c6",
@@ -683,7 +683,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Mary Pickford",
+      us: "Mary Pickford",
       ch: "玛丽皮克福德",
     },
     id: "aa8381956049978f0012e1a27e6a0736",
@@ -694,7 +694,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Hemingway Special",
+      us: "Hemingway Special",
       ch: "海明威得其利",
     },
     id: "aa8381956049978f0012e1a3604400b2",
@@ -705,7 +705,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Dark 'n' Stormy",
+      us: "Dark 'n' Stormy",
       ch: "月黑风高",
     },
     id: "aa8381956049978f0012e1a467edf62f",
@@ -716,7 +716,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Ramos Fizz",
+      us: "Ramos Fizz",
       ch: "拉莫斯·金·菲兹",
     },
     id: "aa8381956049978f0012e1a53dae1a20",
@@ -727,7 +727,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Russian Spring Punch",
+      us: "Russian Spring Punch",
       ch: "苏醒的俄罗斯人",
     },
     id: "",
@@ -738,18 +738,18 @@ export const cardData = [
   },
   {
     name: {
-      en: "God Father",
+      us: "God Father",
       ch: "教父",
     },
     id: "aa8381956049978f0012e1a70a6629cc",
     taste: [],
     mood: [],
     img: "aa8381956049978f0012e1a70a6629cc",
-    like: 45,
+    like: 99,
   },
   {
     name: {
-      en: "Cosmopolitan",
+      us: "Cosmopolitan",
       ch: "大都会",
     },
     id: "aa8381956049978f0012e1a80e620576",
@@ -760,7 +760,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Dry Martini",
+      us: "Dry Martini",
       ch: "干马天尼",
     },
     id: "aa8381956049978f0012e1a9685a5119",
@@ -771,7 +771,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Between the Sheets",
+      us: "Betweus the Sheets",
       ch: "间缝",
     },
     id: "aa8381956049978f0012e1aa247d55a2",
@@ -782,7 +782,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Casino",
+      us: "Casino",
       ch: "赌场",
     },
     id: "aa8381956049978f0012e1ab34bae55f",
@@ -793,7 +793,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Caipirinha",
+      us: "Caipirinha",
       ch: "巴西卡琵莉亚",
     },
     id: "aa8381956049978f0012e1ac40a17e48",
@@ -804,7 +804,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Vampiro",
+      us: "Vampiro",
       ch: "吸血鬼",
     },
     id: "aa8381956049978f0012e1ad66aec48a",
@@ -815,7 +815,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Kamikaze",
+      us: "Kamikaze",
       ch: "神风",
     },
     id: "aa8381956049978f0012e1ae6a34eac1",
@@ -826,7 +826,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "White Lady",
+      us: "White Lady",
       ch: "白色佳人",
     },
     id: "aa8381956049978f0012e1af376f2c54",
@@ -837,7 +837,7 @@ export const cardData = [
   },
   {
     name: {
-      en: "Harvey Wallbanger",
+      us: "Harvey Wallbanger",
       ch: "哈维撞墙",
     },
     id: "aa8381956049978f0012e1b057e47da7",

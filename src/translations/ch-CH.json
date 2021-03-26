@@ -1,5 +1,9 @@
 {
     "HOT_COCKTAILS": "热门鸡尾酒",
     "ENJOY_SUMMER":"清爽一夏",
-    "LANGUAGES": "中文"
+    "LANGUAGES": "中文",
+    "DETAILS_INGREDIENTS":"材料",
+    "DETAILS_DESCRIPTION":"简介",
+    "DETAILS_PREPATION":"制作方法",
+    "DETAILS_NEED":"你可能需要"
 }

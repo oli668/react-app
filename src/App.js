@@ -39,11 +39,12 @@ const App = () => {
         textComponent={React.Fragment}
       >
         <NavBar isSidemenu></NavBar>
-        <div className="fixed z-50 w-full">
+        <div className="fixed z-40 w-full">
           <Header />
         </div>
         <Divider></Divider>
         <div className="App container mx-auto px-4 md:px-10 xl:px-16 2xl:px-16 bg-clip-content min-h-screen">
+          <Divider size="sm" />
           <Switch>
             <Route
               exact
