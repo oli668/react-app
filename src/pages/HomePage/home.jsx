@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { Card } from "components/Card/Card";
 import { cardData } from "components/Card/data.js";
 import { useIntl } from "react-intl";
-import { SearchBar } from "components/Header/SearchBar";
 import { Divider } from "components/Divider/Divider";
 // import { tcbFetchAllCocktails } from "api/api";
 // import { saveCocktails } from "store/actions/cocktails.js";

@@ -847,3 +847,39 @@ export const cardData = [
     like: 41,
   },
 ];
+
+export const productData = [
+  {
+    name: {
+      us: "Gordon's Gin",
+      ch: "哥顿金酒",
+    },
+    id: "",
+    price: { us: "45.90", ch: "310.00" },
+    img: "gin",
+    volume: "750ml",
+    like: 45,
+  },
+  {
+    name: {
+      us: "Vodka",
+      ch: "伏特加",
+    },
+    id: "",
+    price: { us: "54.80", ch: "340.00" },
+    img: "vodka",
+    volume: "750ml",
+    like: 45,
+  },
+  {
+    name: {
+      us: "Dry Martini",
+      ch: "味美思",
+    },
+    id: "",
+    price: { us: "20.90", ch: "134.00" },
+    img: "liq",
+    volume: "750ml",
+    like: 45,
+  },
+];
