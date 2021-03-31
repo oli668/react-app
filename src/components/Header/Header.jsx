@@ -11,6 +11,7 @@ export const Header = () => {
   const { isShowSidemenu } = useSelector((store) => {
     return store.header;
   });
+  const { items } = useSelector((store) => store.shoppingCart);
   return (
     <div className="bg-gray relative">
       <div className="container w-full md:w-3/5 my-0 mx-auto px-2 2xl:px-0 bg-clip-content">
@@ -83,7 +84,11 @@ export const Header = () => {
                     </svg>
                   </div>
                 )}
-                <div className="my-auto">
+
+                <div className="my-auto relative">
+                  <span className="absolute bottom-1/2 left-6">
+                    {items.length}
+                  </span>
                   <svg
                     className="w-8 mx-2.5 my-auto"
                     xmlns="http://www.w3.org/2000/svg"
