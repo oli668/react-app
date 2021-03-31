@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Divider } from "components/Divider/Divider";
+import {
+  addItemToShoppingCart,
+  removeItemToShoppingCart,
+} from "store/actions/products.js";
 
 export const ProductCard = (props) => {
   const language = useSelector((store) => store.header.language).toLowerCase();
+  const dispatch = useDispatch();
   const [isAddShopingCart, setAddedShowCart] = useState(false);
   return (
     <div className="h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md">
@@ -25,6 +30,9 @@ export const ProductCard = (props) => {
             className="outline-none"
             onClick={() => {
               setAddedShowCart(!isAddShopingCart);
+              !isAddShopingCart
+                ? dispatch(addItemToShoppingCart(props))
+                : dispatch(removeItemToShoppingCart(props.id));
             }}
           >
             {!isAddShopingCart && (
