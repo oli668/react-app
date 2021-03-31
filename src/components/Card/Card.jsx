@@ -10,7 +10,7 @@ export const Card = (props) => {
   const { name, mood, img, taste, id } = props;
   return (
     <div
-      className={`py-4 px-2 h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md`}
+      className={`font-main_theme py-4 px-2 h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md`}
     >
       <div
         className={`relative group`}

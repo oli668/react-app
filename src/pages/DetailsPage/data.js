@@ -53,10 +53,28 @@ export const data = {
   mood: { id: "mood_id", us: "happy", ch: "开心" },
   taste: { id: "taste_id", us: "bitter", ch: "苦" },
   weather: { id: "weather_id", us: "sun", ch: "晴" },
-  step: {
-    ch: "加入酒然后摇. 加柠檬作为装饰",
-    us: "Shake and strain into a chilled cocktail glass. Add the garnish",
-  },
+  step: [
+    {
+      ch: "预冷冻你的杯子",
+      us: "Chill your coupe glass before preparing the cocktail",
+    },
+    {
+      ch: "用冰填满2/3份杯子",
+      us: "Fill a mixing glass 2/3 full with cracked ice",
+    },
+    {
+      ch: "加入cognac 和 ameretto 混入杯子",
+      us: "Add the cognac and amaretto to the mixing glass",
+    },
+    {
+      ch: "搅拌你的鸡尾酒30～45秒",
+      us: "Stir your cocktail for 30-45 seconds",
+    },
+    {
+      ch: "把混合的酒倒入已经预冷的杯子里",
+      us: "Strain the mixing glass contents into the chilled coupe glass",
+    },
+  ],
 };
 
 export const productData = {};

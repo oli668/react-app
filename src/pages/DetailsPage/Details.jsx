@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { Divider } from "components/Divider/Divider";
 import { data } from "./data.js";
 import { useIntl } from "react-intl";
+import { productData } from "components/Card/data.js";
+import { ProductCard } from "components/Card/ProductCard.jsx";
 
 export const Details = (props) => {
   const params = useParams();
@@ -21,11 +23,11 @@ export const Details = (props) => {
     step,
   } = data;
   return (
-    <>
-      <Divider size="md"></Divider>
-      <div className="w-full mx-auto my-0 shadow-3xl md:w-3/4">
-        <div className="flex justify-between">
-          <div className="w-1/2 mt-8 mb-8">
+    <div className={"w-full mx-auto my-0 shadow-lg md:w-3/4 font-main_theme"}>
+      {/* Details card */}
+      <div className="">
+        <div className="flex flex-col justify-between md:flex-row">
+          <div className="w-full md:w-1/2 mt-8 mb-8">
             <div>
               <img
                 className="m-auto w-3/4 shadow-lg group-hover:opacity-20 rounded-md max-w-sm flex opacity-100 h-auto transition: 0.5s ease-in-out"
@@ -41,9 +43,9 @@ export const Details = (props) => {
             </div>
             <div className="m-auto p-5">{description[language]}</div>
           </div>
-          <div className="w-1/2 mt-8 mb-8 flex justify-between">
+          <div className="mt-0 mb-0 mx-5 w-full md:w-1/2 md:mt-8 md:mb-8 flex justify-between">
             <div className="w-full">
-              <div className="flex flex-col justify-between md:flex-row">
+              <div className="flex justify-between md:flex-row">
                 <div className="md:w-1/2 w-full">
                   <div className="font-bold text-lg mt-3">
                     {intl.formatMessage({ id: "DETAILS_DESCRIPTION" })}
@@ -176,15 +178,35 @@ export const Details = (props) => {
               <div className="font-bold text-lg mt-3">
                 {intl.formatMessage({ id: "DETAILS_PREPATION" })}
               </div>
-              <div className="mt-3">{step[language]}</div>
-              <div className="font-bold text-lg mt-3">
-                {intl.formatMessage({ id: "DETAILS_NEED" })}
+              <div className="mt-3">
+                {step.map((item, key) => {
+                  return (
+                    <div key={key}>
+                      {
+                        <div className="py-3">
+                          <span>{key + 1}</span> <span>{item[language]}</span>
+                        </div>
+                      }
+                    </div>
+                  );
+                })}
               </div>
-              <div className="mt-3">{step[language]}</div>
             </div>
           </div>
         </div>
       </div>
-    </>
+      {/* you might like to buy */}
+      <div className="font-bold text-lg mt-3 mx-4">
+        {intl.formatMessage({ id: "DETAILS_NEED" })}
+      </div>
+      <div className="flex flex-col md:flex-row">
+        {productData.map((props) => (
+          <div className="m-3">
+            <ProductCard {...props}></ProductCard>
+          </div>
+        ))}
+      </div>
+      <Divider size="md"></Divider>
+    </div>
   );
 };
