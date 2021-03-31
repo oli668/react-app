@@ -6,7 +6,7 @@ import { data } from "./data.js";
 import { useIntl } from "react-intl";
 import { productData } from "components/Card/data.js";
 import { ProductCard } from "components/Card/ProductCard.jsx";
-
+import { SVGGlass } from "./SVGGlass";
 export const Details = (props) => {
   const params = useParams();
   const language = useSelector((store) => store.header.language).toLowerCase();
@@ -68,11 +68,7 @@ export const Details = (props) => {
                     <span className="px-3">{category[language]}</span>
                   </div>
                   <div className="flex mt-3">
-                    <img
-                      className="w-5"
-                      alt="none"
-                      src={require("./martini.png")}
-                    />
+                    <SVGGlass></SVGGlass>
                     <span className="px-3">{glass[language]}</span>
                   </div>
                   <div className="flex mt-3">
