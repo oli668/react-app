@@ -54,11 +54,13 @@ export const SideMenu = (props) => {
           return (
             <div key={key} className="w-full pt-8 px-w shadow-sm px-2">
               <div className="bg-white p-2 rounded-md flex">
-                <img
-                  className="w-1/3"
-                  alt="none"
-                  src={`https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/products/${item.img}.webp`}
-                ></img>
+                <div className="w-1/3">
+                  <img
+                    className="w-full"
+                    alt="none"
+                    src={`https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/products/${item.img}.webp`}
+                  ></img>
+                </div>
                 <div className="w-2/3 flex flex-col">
                   <div
                     className="pt-5 pl-2 mx-2 pb-2 flex justify-between"
