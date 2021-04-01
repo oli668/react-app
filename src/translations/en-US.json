@@ -1,9 +1,17 @@
 {
+    "HOME":"Home",
     "HOT_COCKTAILS": "Hot Cocktails",
     "ENJOY_SUMMER": "Eojoy Summer",
     "DETAILS_INGREDIENTS":"Ingredients",
     "DETAILS_DESCRIPTION":"Description",
     "DETAILS_PREPATION":"Prepation",
-    "LANGUAGES": "English",
-    "DETAILS_NEED":"You may need"
+    "LANGUAGES": "中文",
+    "DETAILS_NEED":"You may need",
+    "ADD_TO_CART":"Added to cart",
+    "PRODUCT_SUBTOTAL": "SubTotal",
+    "CONTINUE_SHOPPING":"Continue shopping",
+    "CHECK_OUT":"Check out",
+    "YOUR_SHOPPING_CART":"Your Shopping Cart",
+    "EMPTY_CART": "The cart is empty",
+    "All_COCKTAILS":"Other You May Like"
 }

@@ -35,6 +35,13 @@ const HomePage = () => {
       })
       .slice(-8);
   };
+  const getOtherAllCocktails = () => {
+    return cardData
+      .sort((a, b) => {
+        return b.like - a.like;
+      })
+      .slice(8, -8);
+  };
   return (
     <div>
       <Divider size="sm" />
@@ -60,6 +67,18 @@ const HomePage = () => {
         <div className="w-3/4 my-0 mx-auto">
           <div className="relative inline-flex flex-wrap m-auto justify-evenly">
             {getSummerCocktails().map((data, id) => {
+              return <Card key={id} {...data} />;
+            })}
+          </div>
+        </div>
+        <Divider size="sm" />
+        <div className="w-3/4 my-0 mx-auto text-2xl font-semibold">
+          {intl.formatMessage({ id: "All_COCKTAILS" })}
+        </div>
+        <Divider size="xs" />
+        <div className="w-3/4 my-0 mx-auto">
+          <div className="relative inline-flex flex-wrap m-auto justify-evenly">
+            {getOtherAllCocktails().map((data, id) => {
               return <Card key={id} {...data} />;
             })}
           </div>

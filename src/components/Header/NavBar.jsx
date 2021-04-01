@@ -14,6 +14,7 @@ export const NavBar = ({ isSidemenu }) => {
   const dispatch = useDispatch();
   const [currHoverBtn, showDropdownList] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState(false);
+  const language = useSelector((store) => store.header.language).toLowerCase();
   useClickOutside(navRef, () => {
     showDropdownList(null);
   });
@@ -31,7 +32,9 @@ export const NavBar = ({ isSidemenu }) => {
               history.push("/");
             }}
           >
-            <span className="px-2 py-2 center">{"首页"}</span>
+            <span className="px-2 py-2 center">
+              {intl.formatMessage({ id: "HOME" })}
+            </span>
           </button>
           {navItems.map((item, id) => {
             return (
@@ -43,7 +46,9 @@ export const NavBar = ({ isSidemenu }) => {
                     showDropdownList(item.id);
                   }}
                 >
-                  <span className="px-2 py-2 center">{item.content}</span>
+                  <span className="px-2 py-2 center">
+                    {item.content[language]}
+                  </span>
                 </button>
                 <Transition
                   show={currHoverBtn === item.id && item.isSubmenu}
@@ -113,7 +118,7 @@ export const NavBar = ({ isSidemenu }) => {
       )}
       {
         <div
-          className={`z-50 absolute md:hidden left-0  ${
+          className={`z-50 fixed md:hidden left-0  ${
             isShowSidemenu ? "animate-sidebarOpen block" : "hidden"
           }  bg-gray-dark min-h-screen w-72`}
         >

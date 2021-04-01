@@ -13,3 +13,11 @@ export const removeItemToShoppingCart = (data) => {
     payload: data,
   };
 };
+
+export const DECREASE_ITEM = "DECREASE_ITEM";
+export const decreaseItemFromShoppingCart = (id) => {
+  return {
+    type: DECREASE_ITEM,
+    payload: id,
+  };
+};
