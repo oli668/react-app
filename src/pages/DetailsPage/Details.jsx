@@ -52,7 +52,7 @@ export const Details = (props) => {
                   </div>
                   <div className="flex mt-3">
                     <svg
-                      className="w-5"
+                      className="w-5 h-5"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export const Details = (props) => {
                   </div>
                   <div className="flex mt-3">
                     <svg
-                      className="w-5"
+                      className="w-5 h-5"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -90,7 +90,7 @@ export const Details = (props) => {
                   </div>
                   <div className="flex mt-3">
                     <svg
-                      className="w-5"
+                      className="w-5 h-5"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ export const Details = (props) => {
                   </div>
                   <div className="flex mt-3">
                     <svg
-                      className="w-5"
+                      className="w-5 h-5"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
