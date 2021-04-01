@@ -1,14 +1,19 @@
 export const navItems = [
   {
     id: "categories",
-    content: "分类",
+    content: { ch: "分类", us: "Categories" },
     name: "categories",
     isSubmenu: true,
   },
-  { id: "blog", content: "博客", name: "blog", isSubmenu: true },
+  {
+    id: "blog",
+    content: { ch: "论坛", us: "Blog" },
+    name: "blog",
+    isSubmenu: true,
+  },
   {
     id: "tools",
-    content: "工具",
+    content: { ch: "器具", us: "Tools" },
     name: "tools",
     isSubmenu: true,
   },

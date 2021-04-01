@@ -1,9 +1,17 @@
 {
+    "HOME":"首页",
     "HOT_COCKTAILS": "热门鸡尾酒",
     "ENJOY_SUMMER":"清爽一夏",
-    "LANGUAGES": "中文",
+    "LANGUAGES": "English",
     "DETAILS_INGREDIENTS":"材料",
     "DETAILS_DESCRIPTION":"简介",
     "DETAILS_PREPATION":"制作方法",
-    "DETAILS_NEED":"你可能需要"
+    "DETAILS_NEED":"你可能需要",
+    "ADD_TO_CART":"已入购物车",
+    "PRODUCT_SUBTOTAL":"总价",
+    "CONTINUE_SHOPPING":"继续购物",
+    "CHECK_OUT": "结账",
+    "YOUR_SHOPPING_CART":"你的购物车",
+    "EMPTY_CART": "你的购物车是空的",
+    "All_COCKTAILS":"你可能喜欢的其他鸡尾酒"
 }

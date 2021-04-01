@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleSidemenu } from "store/actions/header";
+import { toggleSidemenu, toggleShoppingCartMenu } from "store/actions/header";
 import { NavBar } from "./NavBar";
 import { SearchBar } from "./SearchBar";
-
+import { SideMenu } from "components/ShoppingCart/SideMenu";
 export const Header = () => {
   const dispatch = useDispatch();
   const [isShowSearch, setIsShowSearch] = useState(false);
@@ -84,10 +84,21 @@ export const Header = () => {
                     </svg>
                   </div>
                 )}
-
-                <div className="my-auto relative">
-                  <span className="absolute bottom-1/2 left-6">
-                    {items.length}
+                <SideMenu></SideMenu>
+                <div
+                  className="my-auto relative cursor-pointer"
+                  onClick={() => {
+                    dispatch(toggleShoppingCartMenu());
+                  }}
+                >
+                  <span
+                    className={`absolute bottom-1/2 ${
+                      items.length > 9 ? "left-5" : "left-6"
+                    }`}
+                  >
+                    {items.reduce((acc, obj) => {
+                      return acc + obj.quantity;
+                    }, 0)}
                   </span>
                   <svg
                     className="w-8 mx-2.5 my-auto"

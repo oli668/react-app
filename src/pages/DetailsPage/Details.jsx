@@ -196,8 +196,8 @@ export const Details = (props) => {
         {intl.formatMessage({ id: "DETAILS_NEED" })}
       </div>
       <div className="flex flex-col md:flex-row">
-        {productData.map((props) => (
-          <div className="m-3">
+        {productData.map((props, key) => (
+          <div key={key} className="m-3">
             <ProductCard {...props}></ProductCard>
           </div>
         ))}

@@ -12,6 +12,7 @@ module.exports = {
     maxWidth: {
       card_md: "225px",
       card: "253px",
+      side_menu: "475px",
     },
     extend: {
       transitionProperty: {
@@ -40,12 +41,12 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       blue: {
-        light: "#ccf2f4",
-        DEFAULT: "#a4ebf3",
+        light: "#e4e3dd",
+        DEFAULT: "#f6f6f4",
       },
       gray: {
-        dark: "#aaaaaa",
-        DEFAULT: "#f4f9f9",
+        dark: "#e4e3dd",
+        DEFAULT: "#f6f6f4",
       },
       black: {
         DEFAULT: "#000000",
