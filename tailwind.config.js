@@ -48,6 +48,13 @@ module.exports = {
         dark: "#e4e3dd",
         DEFAULT: "#f6f6f4",
       },
+      testing: {
+        dark: "#C0C0C0",
+        DEFAULT: "#C0C0C0",
+      },
+      green: {
+        DEFAULT: "#32CD32",
+      },
       black: {
         DEFAULT: "#000000",
         light: "#222831",

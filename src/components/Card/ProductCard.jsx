@@ -18,7 +18,7 @@ export const ProductCard = (props) => {
   }, [items, props.id]);
   return (
     <div className="h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md">
-      <div className="">
+      <div>
         <img
           alt="none"
           src={`https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/products/${props.img}.webp`}

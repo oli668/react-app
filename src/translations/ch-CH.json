@@ -13,5 +13,18 @@
     "CHECK_OUT": "结账",
     "YOUR_SHOPPING_CART":"你的购物车",
     "EMPTY_CART": "你的购物车是空的",
-    "All_COCKTAILS":"你可能喜欢的其他鸡尾酒"
+    "All_COCKTAILS":"你可能喜欢的其他鸡尾酒",
+    "ORDER_SUMMARY":"购物总览",
+    "SHIP_INFO": "邮寄地址",
+    "SHIP_INFO_NAME":"姓名",
+    "SHIP_INFO_EMAIL":"邮箱",
+    "SHIP_INFO_ADDRESS":"地址",
+    "SHIP_INFO_CITY":"城市",
+    "SHIP_INFO_COUNTRY":"国家",
+    "SHIP_INFO_ZIP":"邮编",
+    "SHIP_INFO_CARD":"卡号",
+    "SHIP_INFO_PAYMENT_TITLE":"付款方式",
+    "WARNING_MES":"此功能程序员小哥哥阿来正在开发中...你愿意帮他买杯咖啡吗?以资鼓励？？",
+    "THIS_TIME":"好的",
+    "NEXT_TIME":"下次一定"
 }

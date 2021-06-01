@@ -32,11 +32,18 @@ export const data = {
       ingredient: { id: "liqour_003", ch: "苦艾酒", us: "Lillet Blonde" },
     },
     {
-      special: {
-        id: "special_1",
-        ch: "3 勺糖浆",
-        us: "3 dashes Strawberry syrup",
-      },
+      special: [
+        {
+          id: "special_1",
+          ch: "3 勺糖浆",
+          us: "3 dashes Strawberry syrup",
+        },
+        {
+          id: "special_1",
+          ch: "3 勺糖浆",
+          us: "3 dashes Strawberry syrup",
+        },
+      ],
     },
   ],
   garnish: { id: "decoration_001", ch: "柠檬卷", us: "Lemon twist" },

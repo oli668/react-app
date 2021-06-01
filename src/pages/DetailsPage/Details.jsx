@@ -2,14 +2,20 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Divider } from "components/Divider/Divider";
-import { data } from "./data.js";
 import { useIntl } from "react-intl";
 import { productData } from "components/Card/data.js";
 import { ProductCard } from "components/Card/ProductCard.jsx";
 import { SVGGlass } from "./SVGGlass";
+import { decrypt } from "shared/DataUtils.js";
 export const Details = (props) => {
   const params = useParams();
   const language = useSelector((store) => store.header.language).toLowerCase();
+  const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
+  const selectedCocktailsDetails = (() => {
+    return decrypt(cocktailsDetails).find((item) => {
+      return item._id === params.id;
+    });
+  })();
   const intl = useIntl();
   const {
     category,
@@ -21,7 +27,7 @@ export const Details = (props) => {
     weather,
     taste,
     step,
-  } = data;
+  } = selectedCocktailsDetails;
   return (
     <div className={"w-full mx-auto my-0 shadow-lg md:w-3/4 font-main_theme"}>
       {/* Details card */}
@@ -36,9 +42,11 @@ export const Details = (props) => {
               />
               <div className="m-auto w-3/4 text-center pt-3">
                 <span className="text-xl font-bold px-2">
-                  {data.name[language]}
+                  {selectedCocktailsDetails.name[language]}
                 </span>
-                <span>{language === "ch" && data.name.us}</span>
+                <span>
+                  {language === "ch" && selectedCocktailsDetails.name.us}
+                </span>
               </div>
             </div>
             <div className="m-auto p-5">{description[language]}</div>
@@ -159,9 +167,13 @@ export const Details = (props) => {
                     {ingredients.map((item, id) => {
                       return (
                         item.special && (
-                          <li key={id} className="flex mt-3 list-disc">
-                            <div className="w-full text-left">
-                              {item.special[language]}
+                          <li key={id} className="flex list-disc">
+                            <div className="w-full text-left flex flex-col">
+                              {item.special.map((special) => (
+                                <span className="mt-3">
+                                  {special[language]}
+                                </span>
+                              ))}
                             </div>
                           </li>
                         )

@@ -5,7 +5,7 @@ const app = cloudbase.init({
 // 1. 获取数据库引用
 var db = app.database();
 exports.main = async (event, context) => {
-  const res = await db.collection("cocktails").get();
+  const res = await db.collection("cocktails_details").get();
   return {
     res,
   };

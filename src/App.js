@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage/home";
 import { BrowserRouter, useHistory, Switch, Route } from "react-router-dom";
@@ -12,12 +12,13 @@ import { IntlProvider } from "react-intl";
 import languages from "translations/translations";
 import { flattenNestedObject } from "shared/DataUtils";
 import { useSelector } from "react-redux";
-// import { loginCloudServer } from "api/api";
+import { loginCloudServer } from "api/api";
 import { Divider } from "components/Divider/Divider";
+import { CheckoutPage } from "pages/CheckoutPage/CheckoutPage";
 
 const App = () => {
   const history = useHistory();
-  // const [isLogin, setLoginStatus] = useState();
+  const [isLogin, setLoginStatus] = useState();
   const language = useSelector((store) => store.header.language);
   const flatLanguagues = useMemo(
     () => flattenNestedObject(languages[language]),
@@ -25,11 +26,11 @@ const App = () => {
   );
 
   useEffect(() => {
-    // loginCloudServer().then((loginStatus) => {
-    //   setLoginStatus(loginStatus);
-    // });
+    loginCloudServer().then((loginStatus) => {
+      setLoginStatus(loginStatus);
+    });
   }, []);
-  console.log("render");
+  console.log(isLogin);
   return (
     <BrowserRouter history={history}>
       <IntlProvider
@@ -58,6 +59,11 @@ const App = () => {
               path={`${ROUTES.DETAILS}/:id`}
               render={() => <Details></Details>}
             />
+            <Route
+              exact
+              path={ROUTES.CHECKOUT}
+              render={() => <CheckoutPage></CheckoutPage>}
+            ></Route>
           </Switch>
         </div>
       </IntlProvider>
