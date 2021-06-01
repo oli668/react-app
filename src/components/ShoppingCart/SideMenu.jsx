@@ -8,13 +8,15 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { Divider } from "components/Divider/Divider";
 import { useIntl } from "react-intl";
+import { useHistory } from "react-router-dom";
+import { ROUTES } from "routes.js";
 
 export const SideMenu = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const intl = useIntl();
   const language = useSelector((store) => store.header.language).toLowerCase();
   const { items } = useSelector((store) => store.shoppingCart);
-  console.log(items);
   const { isShowShoppingCartMenu } = useSelector((store) => {
     return store.header;
   });
@@ -45,8 +47,14 @@ export const SideMenu = (props) => {
         </svg>
       </button>
       <Divider size="md"></Divider>
+      <div className="bg-warning">
+        <span className="p-2">{intl.formatMessage({ id: "WARNING_MES" })}</span>
+        <button className="bg-white hover:bg-green">
+          {intl.formatMessage({ id: "THIS_TIME" })}
+        </button>
+      </div>
       <div
-        className={`h-2/3 overflow-scroll ${
+        className={`h-2/3 ${
           items.length === 0 ? "justify-center items-center flex" : ""
         }`}
       >
@@ -147,7 +155,15 @@ export const SideMenu = (props) => {
                 .toFixed(2)}
             </div>
           </div>
-          <div className="w-28 mx-3 flex justify-center p-4 rounded-md cursor-pointer bg-white">
+          <div
+            className="w-28 mx-3 flex justify-center p-4 rounded-md cursor-not-allowed bg-testing"
+            onClick={() => {
+              dispatch(toggleShoppingCartMenu());
+              if (items.length > 0) {
+                // history.push(ROUTES.CHECKOUT);
+              }
+            }}
+          >
             <span className="text-center font-extrabold">
               {intl.formatMessage({ id: "CHECK_OUT" })}
             </span>
@@ -155,7 +171,7 @@ export const SideMenu = (props) => {
         </div>
         <div className="w-full flex">
           <div className="w-2/3 justify-start mx-3"></div>
-          <div className="w-28 text-center mx-3 my-3 font-extrabold p-4  justify-center rounded-md cursor-pointer bg-white">
+          <div className="w-28 text-center mx-3 my-3 font-extrabold p-4  justify-center rounded-md cursor-not-allowed bg-testing">
             <span className="">
               {intl.formatMessage({ id: "CONTINUE_SHOPPING" })}
             </span>

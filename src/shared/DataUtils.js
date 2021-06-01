@@ -1,3 +1,5 @@
+import CryptoJS from "crypto-js";
+import { ENV } from "constants/globals";
 export const flattenNestedObject = (tgt, prefix) => {
   if (!tgt) return {};
   return Object.keys(tgt).reduce((messages, key) => {
@@ -20,4 +22,10 @@ export const processingIBAcocktails = (data) => {
   //   newItem.base =
   //   return newItem
   // });
+};
+
+export const decrypt = (data) => {
+  var bytes = CryptoJS.AES.decrypt(data, ENV);
+  var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  return decryptedData;
 };

@@ -1,24 +1,24 @@
 import React, { useEffect } from "react";
-// import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Card } from "components/Card/Card";
 import { cardData } from "components/Card/data.js";
 import { useIntl } from "react-intl";
 import { Divider } from "components/Divider/Divider";
-// import { tcbFetchAllCocktails } from "api/api";
-// import { saveCocktails } from "store/actions/cocktails.js";
+import { SayLove } from "pages/StartPage/StartPage";
+import { tcbFetchCocktailsDetails } from "api/api";
+import { saveCocktailsDetails } from "store/actions/cocktails.js";
 
 const HomePage = () => {
   const intl = useIntl();
-  // const cocktails = useSelector((store) => store.cocktails);
-  // const dispatch = useDispatch();
+  const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    // if (!cocktails.length) {
-    //   tcbFetchAllCocktails().then((res) => {
-    //     console.log(res);
-    //     dispatch(saveCocktails(res.result.res.data));
-    //   });
-    // }
+    if (!cocktailsDetails.length) {
+      tcbFetchCocktailsDetails().then((res) => {
+        dispatch(saveCocktailsDetails(res.result));
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const getHotCocktails = () => {
@@ -45,6 +45,7 @@ const HomePage = () => {
   return (
     <div>
       <Divider size="sm" />
+      <SayLove></SayLove>
       <div>
         <div className="w-3/4 my-0 mx-auto text-2xl font-semibold">
           {intl.formatMessage({ id: "HOT_COCKTAILS" })}
