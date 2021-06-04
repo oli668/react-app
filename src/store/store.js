@@ -9,7 +9,8 @@ const enhancers = composeEnhancers(applyMiddleware(thunkMiddleware));
 const persistConfig = {
   // configuration object for redux-persist
   key: "root",
-  storage, // define which storage to use
+  storage, // define which storage to use,
+  whitelist: ["cocktailsDetails"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer); // create a persisted reducer

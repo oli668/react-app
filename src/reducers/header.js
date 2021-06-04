@@ -2,11 +2,13 @@ import {
   TOGGLE_SIDE_MENU,
   SET_LANGUAGE,
   TOGGLE_SHOPPING_CART_MENU,
+  TOGGLE_LOGIN_MODAL,
 } from "store/actions/header.js";
 
 const initialState = {
   isShowSidemenu: false,
   isShowShoppingCartMenu: false,
+  isShowLoginModal: false,
   language: "CH",
 };
 
@@ -18,6 +20,11 @@ export const header = (state = initialState, action) => {
       return {
         ...state,
         isShowShoppingCartMenu: !state.isShowShoppingCartMenu,
+      };
+    case TOGGLE_LOGIN_MODAL:
+      return {
+        ...state,
+        isShowLoginModal: !state.isShowLoginModal,
       };
     case SET_LANGUAGE:
       return { ...state, language: action.payload };

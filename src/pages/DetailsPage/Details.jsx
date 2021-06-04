@@ -5,6 +5,7 @@ import { Divider } from "components/Divider/Divider";
 import { useIntl } from "react-intl";
 import { productData } from "components/Card/data.js";
 import { ProductCard } from "components/Card/ProductCard.jsx";
+import { ReviewCard } from "components/ReviewCard/ReviewCard";
 import { SVGGlass } from "./SVGGlass";
 import { decrypt } from "shared/DataUtils.js";
 export const Details = (props) => {
@@ -204,6 +205,12 @@ export const Details = (props) => {
         </div>
       </div>
       {/* you might like to buy */}
+      <div className="font-bold text-lg mt-3 mx-4">
+        {intl.formatMessage({ id: "REVIEW" })}
+      </div>
+      <div className="font-bold text-lg mx-4">
+        <ReviewCard></ReviewCard>
+      </div>
       <div className="font-bold text-lg mt-3 mx-4">
         {intl.formatMessage({ id: "DETAILS_NEED" })}
       </div>
