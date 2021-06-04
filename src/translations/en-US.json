@@ -26,5 +26,21 @@
     "SHIP_INFO_PAYMENT_TITLE":"Payment Information",
     "WARNING_MES":"Stupid developer is working hard on the feature. would you buy a coffee for him?",
     "THIS_TIME":"Sure",
-    "NEXT_TIME":"Maybe"
+    "NEXT_TIME":"Maybe",
+    "REVIEW":"AlcReview",
+    "LOGIN":"Login Account",
+    "ACCOUNT":"Account",
+    "PASSWORD":"Password",
+    "FORGET_PASSWORD":"Forget Password",
+    "LOGIN_BUTTON":"Login",
+    "OR":"or",
+    "CREATE_ACCOUNT":"Create account",
+    "PLACEHOLDER_ACCOUNT": "Account / Phone / Email",
+    "PLACEHOLDER_PASSWORD": "Password",
+    "LOGIN_ACCOUNT":"Already have account, login instead",
+    "PLACEHOLDER_ACCOUNT_REGISTER": "Email",
+    "PLACEHOLDER_ACCOUNT_REGISTER_PHONE": "Phone Register",
+    "REGISTER":"Create account",
+    "REGISTER_BUTTON":"Create account",
+    "CONFIRM_PASSWORD":"Confirm Password"
 }

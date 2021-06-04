@@ -26,5 +26,21 @@
     "SHIP_INFO_PAYMENT_TITLE":"付款方式",
     "WARNING_MES":"此功能程序员小哥哥阿来正在开发中...你愿意帮他买杯咖啡吗?以资鼓励？？",
     "THIS_TIME":"好的",
-    "NEXT_TIME":"下次一定"
+    "NEXT_TIME":"下次一定",
+    "REVIEW":"酒友评价",
+    "LOGIN":"登陆账户",
+    "ACCOUNT":"账号",
+    "PASSWORD":"密码",
+    "FORGET_PASSWORD":"忘记密码",
+    "LOGIN_BUTTON":"登陆",
+    "OR":"或者",
+    "CREATE_ACCOUNT":"新建账户",
+    "PLACEHOLDER_ACCOUNT": "邮箱",
+    "PLACEHOLDER_PASSWORD": "密码",
+    "CONFIRM_PASSWORD":"确认密码",
+    "LOGIN_ACCOUNT":"已有账户，登陆账户",
+    "PLACEHOLDER_ACCOUNT_REGISTER": "邮箱注册",
+    "PLACEHOLDER_ACCOUNT_REGISTER_PHONE": "手机注册",
+    "REGISTER":"注册",
+    "REGISTER_BUTTON":"注册账户"
 }

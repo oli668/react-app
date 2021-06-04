@@ -15,11 +15,12 @@ import { useSelector } from "react-redux";
 import { loginCloudServer } from "api/api";
 import { Divider } from "components/Divider/Divider";
 import { CheckoutPage } from "pages/CheckoutPage/CheckoutPage";
-
+import { Register } from "components/Register/Register";
 const App = () => {
   const history = useHistory();
   const [isLogin, setLoginStatus] = useState();
   const language = useSelector((store) => store.header.language);
+  const isUserLogin = useSelector((store) => store.header.isShowLoginModal);
   const flatLanguagues = useMemo(
     () => flattenNestedObject(languages[language]),
     [language]
@@ -30,9 +31,8 @@ const App = () => {
       setLoginStatus(loginStatus);
     });
   }, []);
-  console.log(isLogin);
   return (
-    <BrowserRouter history={history}>
+    <BrowserRouter history={history} className="overflow-auto">
       <IntlProvider
         locale="fr"
         defaultLocale="en-US"
@@ -40,6 +40,7 @@ const App = () => {
         textComponent={React.Fragment}
       >
         <NavBar isSidemenu></NavBar>
+        {isUserLogin ? <Register></Register> : ""}
         <div className="fixed z-40 w-full">
           <Header />
         </div>
