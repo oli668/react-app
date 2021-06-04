@@ -40,7 +40,7 @@ const App = () => {
         textComponent={React.Fragment}
       >
         <NavBar isSidemenu></NavBar>
-        {isUserLogin ? <Register></Register> : ""}
+        {isUserLogin && isLogin ? <Register></Register> : ""}
         <div className="fixed z-40 w-full">
           <Header />
         </div>

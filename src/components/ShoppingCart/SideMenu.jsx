@@ -8,12 +8,9 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { Divider } from "components/Divider/Divider";
 import { useIntl } from "react-intl";
-import { useHistory } from "react-router-dom";
-import { ROUTES } from "routes.js";
 
 export const SideMenu = (props) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const intl = useIntl();
   const language = useSelector((store) => store.header.language).toLowerCase();
   const { items } = useSelector((store) => store.shoppingCart);

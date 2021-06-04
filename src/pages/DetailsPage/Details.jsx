@@ -170,8 +170,8 @@ export const Details = (props) => {
                         item.special && (
                           <li key={id} className="flex list-disc">
                             <div className="w-full text-left flex flex-col">
-                              {item.special.map((special) => (
-                                <span className="mt-3">
+                              {item.special.map((special, index) => (
+                                <span key={index} className="mt-3">
                                   {special[language]}
                                 </span>
                               ))}
