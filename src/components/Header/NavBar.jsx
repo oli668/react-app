@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
 import { useHistory } from "react-router-dom";
-import { navItems, dropdownMenuList } from "./data";
+import { navItems, dropdownMenuList, subMenuMap } from "./data";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleSidemenu, setLanguage } from "store/actions/header";
+import { toggleSidemenu } from "store/actions/header";
+import { setFilterCocktailsId } from "store/actions/cocktails";
 import { useClickOutside } from "hooks/useClickOutside";
 import { useIntl } from "react-intl";
+import cryptoRandomString from "crypto-random-string";
 
 export const NavBar = ({ isSidemenu }) => {
   const intl = useIntl();
@@ -13,7 +15,6 @@ export const NavBar = ({ isSidemenu }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [currHoverBtn, showDropdownList] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState(false);
   const language = useSelector((store) => store.header.language).toLowerCase();
   useClickOutside(navRef, () => {
     showDropdownList(null);
@@ -21,7 +22,9 @@ export const NavBar = ({ isSidemenu }) => {
   const { isShowSidemenu } = useSelector((store) => {
     return store.header;
   });
-
+  const handleSubMenuClick = (id, type) => {
+    dispatch(setFilterCocktailsId(id, type));
+  };
   return (
     <div>
       {!isSidemenu && (
@@ -64,7 +67,7 @@ export const NavBar = ({ isSidemenu }) => {
                     ref={navRef}
                     className={`absolute flex left-0 bg-gray w-full flex-row z-50`}
                   >
-                    <div className="container w-3/5 flex mx-auto px-4 md;px-10 xl:px-10 2xl:px-0 bg-clip-content flex-wrap">
+                    <div className="container w-2/3 flex mx-auto px-4 md;px-10 xl:px-10 2xl:px-0 bg-clip-content flex-wrap">
                       {Object.keys(dropdownMenuList)
                         .map((key) =>
                           key === currHoverBtn ? dropdownMenuList[key] : []
@@ -75,19 +78,32 @@ export const NavBar = ({ isSidemenu }) => {
                               <div className="px-3 py-3" key={menuKey}>
                                 <div className="flex flex-col">
                                   <span className="border-gray border-b-2 font-bold uppercase">
-                                    {menu}
+                                    {subMenuMap[menu][language]}
                                   </span>
                                   {subMenu[menu].map((item, listId) => {
                                     return (
                                       <div
                                         className="py-2 w-auto cursor-pointer"
                                         key={listId}
+                                        onClick={(e) => {
+                                          history.push(
+                                            `/filtered-content/${menu}/${item.content[
+                                              "us"
+                                            ]
+                                              .split(" ")
+                                              .join("")}/${cryptoRandomString({
+                                              length: 10,
+                                            })}`
+                                          );
+                                          showDropdownList(null);
+                                          handleSubMenuClick(item.id, menu);
+                                        }}
                                       >
                                         <span
                                           className="border-gray hover:shadow-lg 
                         text-black-light hover:text-black border-b-2 hover:border-b-2 hover:border-black font-small"
                                         >
-                                          {item.content}
+                                          {item.content[language]}
                                         </span>
                                       </div>
                                     );
@@ -103,17 +119,6 @@ export const NavBar = ({ isSidemenu }) => {
               </div>
             );
           })}
-          <button
-            className="bg-gray border-gray border-b-2 hover:border-b-2 hover:border-black text-black focus:outline-none hover:px-2 py-2 text-lg font-medium"
-            onClick={() => {
-              dispatch(setLanguage(selectedLanguage ? "CH" : "US"));
-              setSelectedLanguage(!selectedLanguage);
-            }}
-          >
-            <span className="px-2 py-2 center">
-              {intl.formatMessage({ id: "LANGUAGES" })}
-            </span>
-          </button>
         </div>
       )}
       {

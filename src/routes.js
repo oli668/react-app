@@ -4,4 +4,5 @@ export const ROUTES = {
   DETAILS: "/cocktails/details",
   ARTICLE: "/article",
   CHECKOUT: "/checkout",
+  FILTER: "/filtered-content",
 };

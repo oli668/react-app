@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Card } from "components/Card/Card";
-import { cardData } from "components/Card/data.js";
+// import { cardData } from "components/Card/data.js";
 import { useIntl } from "react-intl";
 import { Divider } from "components/Divider/Divider";
 import { SayLove } from "pages/StartPage/StartPage";
 import { tcbFetchCocktailsDetails } from "api/api";
 import { saveCocktailsDetails } from "store/actions/cocktails.js";
+import { decrypt } from "shared/DataUtils.js";
 
 const HomePage = () => {
   const intl = useIntl();
+  const [currentCocktails, setCurrentCocktails] = useState([]);
   const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
+  const filterCocktails = useSelector((store) => store.filterCocktails);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,24 +23,29 @@ const HomePage = () => {
         dispatch(saveCocktailsDetails(res.result));
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const data = decrypt(cocktailsDetails);
+    setCurrentCocktails(data);
+  }, [filterCocktails.id]);
+
   const getHotCocktails = () => {
-    return cardData
+    return currentCocktails
       .sort((a, b) => {
         return b.like - a.like;
       })
       .slice(0, 8);
   };
   const getSummerCocktails = () => {
-    return cardData
+    return currentCocktails
       .sort((a, b) => {
         return b.like - a.like;
       })
       .slice(-8);
   };
   const getOtherAllCocktails = () => {
-    return cardData
+    return currentCocktails
       .sort((a, b) => {
         return b.like - a.like;
       })

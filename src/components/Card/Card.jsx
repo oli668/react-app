@@ -7,7 +7,7 @@ export const Card = (props) => {
   const history = useHistory();
   const [isShowOverlay, setIsShowOverlay] = useState(false);
   const language = useSelector((store) => store.header.language).toLowerCase();
-  const { name, mood, img, taste, id } = props;
+  const { name, mood, taste } = props;
   return (
     <div
       className={`font-main_theme py-4 px-2 h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md`}
@@ -20,11 +20,11 @@ export const Card = (props) => {
         onMouseLeave={() => {
           setIsShowOverlay(false);
         }}
-        onClick={() => history.push(`${ROUTES.DETAILS}/${id}`)}
+        onClick={() => history.push(`${ROUTES.DETAILS}/${props._id}`)}
       >
         <img
           className="shadow-lg group-hover:opacity-20 rounded-t-md max-w-sm flex w-full opacity-100 h-auto transition: 0.5s ease-in-out"
-          src={`https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/cocktails-good/img-${img}.webp`}
+          src={`https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/cocktails-good/img-${props._id}.webp`}
           alt="none"
         />
         <div className="absolute top-1/2 left-1/2 opacity-0 "></div>
@@ -55,18 +55,7 @@ export const Card = (props) => {
             </div> */}
             <div className="flex w-full">
               <span className="p-1 min-w-10 whitespace-nowrap">味道:</span>
-              <div className="flex flex-wrap p-1">
-                {taste.map((item, id) => {
-                  return (
-                    <span
-                      key={id}
-                      className="text-sm tracking-wide block font-sans px-1"
-                    >
-                      {item}
-                    </span>
-                  );
-                })}
-              </div>
+              <div className="flex flex-wrap p-1">{taste[language]}</div>
             </div>
             {/* <div className="flex">
               <span className="p-1 min-w-10 whitespace-nowrap">类型:</span>
@@ -78,18 +67,7 @@ export const Card = (props) => {
             </div> */}
             <div className="flex w-full">
               <span className="p-1 min-w-10 whitespace-nowrap">心情:</span>
-              <div className="flex flex-wrap p-1">
-                {mood.map((item, id) => {
-                  return (
-                    <span
-                      key={id}
-                      className="text-sm tracking-wide block font-sans px-1"
-                    >
-                      {item}
-                    </span>
-                  );
-                })}
-              </div>
+              <div className="flex flex-wrap p-1">{mood[language]}</div>
             </div>
           </div>
         )}

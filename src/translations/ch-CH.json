@@ -42,5 +42,10 @@
     "PLACEHOLDER_ACCOUNT_REGISTER": "邮箱注册",
     "PLACEHOLDER_ACCOUNT_REGISTER_PHONE": "手机注册",
     "REGISTER":"注册",
-    "REGISTER_BUTTON":"注册账户"
+    "REGISTER_BUTTON":"注册账户",
+    "WE_FOUND":"为你查找到的结果",
+    "SORRY_FOUND":"不好意思，我们没有找到你要的酒",
+    "UPDATE_DATABASE":"我们会尽快更新我们的数据库",
+    "BASED_ON":"为基酒的鸡尾酒",
+    "Taste":"的鸡尾酒"
 }

@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import { loginCloudServer } from "api/api";
 import { Divider } from "components/Divider/Divider";
 import { CheckoutPage } from "pages/CheckoutPage/CheckoutPage";
+import { FilterPage } from "pages/FilterPage/FilterPage";
 import { Register } from "components/Register/Register";
 const App = () => {
   const history = useHistory();
@@ -64,6 +65,11 @@ const App = () => {
               exact
               path={ROUTES.CHECKOUT}
               render={() => <CheckoutPage></CheckoutPage>}
+            ></Route>
+            <Route
+              exact
+              path={`${ROUTES.FILTER}/:id/:category/:random`}
+              render={() => <FilterPage></FilterPage>}
             ></Route>
           </Switch>
         </div>
