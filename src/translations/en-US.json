@@ -42,5 +42,10 @@
     "PLACEHOLDER_ACCOUNT_REGISTER_PHONE": "Phone Register",
     "REGISTER":"Create account",
     "REGISTER_BUTTON":"Create account",
-    "CONFIRM_PASSWORD":"Confirm Password"
+    "CONFIRM_PASSWORD":"Confirm Password",
+    "WE_FOUND":"We found thoese cocktails for you",
+    "SORRY_FOUND":"Sorry, we are not able to find your cocktails",
+    "UPDATE_DATABASE": "We will update our database soon",
+    "BASED_ON":"Cocktails that based on",
+    "Taste":"Cocktails"
 }

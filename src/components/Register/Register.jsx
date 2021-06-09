@@ -197,7 +197,7 @@ export const Register = () => {
                 </a>
 
                 <p className="flex-1 text-gray-500 text-md mx-4 my-1 sm:my-auto">
-                  {intl.formatMessage({ id: "OR" })}
+                  {""}
                 </p>
 
                 <a href="register" className="flex-2 underline">

@@ -9,8 +9,12 @@ import {
 import { NavBar } from "./NavBar";
 import { SearchBar } from "./SearchBar";
 import { SideMenu } from "components/ShoppingCart/SideMenu";
+import { setLanguage } from "store/actions/header";
+import us from "images/us.png";
+import ch from "images/ch.png";
 export const Header = () => {
   const dispatch = useDispatch();
+  const [selectedLanguage, setSelectedLanguage] = useState(false);
   const [isShowSearch, setIsShowSearch] = useState(false);
   const { isShowSidemenu } = useSelector((store) => {
     return store.header;
@@ -18,7 +22,7 @@ export const Header = () => {
   const { items } = useSelector((store) => store.shoppingCart);
   return (
     <div className="bg-gray relative">
-      <div className="container w-full md:w-3/5 my-0 mx-auto px-2 2xl:px-0 bg-clip-content">
+      <div className="container w-full md:w-2/3 my-0 mx-auto px-2 2xl:px-0 bg-clip-content">
         <div className="px-2 md:px-0 flex-shrink-0 flex justify-between x-2 pt-3">
           <div className="md:m-0 my-0 flex-shrink-0 flex items-center x-2 px-1 w-full">
             <div className="flex items-start w-full">
@@ -60,7 +64,7 @@ export const Header = () => {
                   <SearchBar></SearchBar>
                 </div>
               </div>
-              <div className="w-1/4 my-auto xl:px-10 flex justify-end xl:w-1/2">
+              <div className="my-auto flex justify-end xl:w-3/4 items-center">
                 {isShowSearch && (
                   <div className="absolute left-0 top-full w-full xl:block xl:relative">
                     <SearchBar></SearchBar>
@@ -140,6 +144,19 @@ export const Header = () => {
                     />
                   </svg>
                 </div>
+                <button
+                  className="w-8 cursor-pointer focus:outline-none ml-2"
+                  onClick={() => {
+                    dispatch(setLanguage(selectedLanguage ? "CH" : "US"));
+                    setSelectedLanguage(!selectedLanguage);
+                  }}
+                >
+                  {selectedLanguage ? (
+                    <img alt="us-icon" src={us} />
+                  ) : (
+                    <img alt="us-icon" src={ch} />
+                  )}
+                </button>
               </div>
             </div>
           </div>

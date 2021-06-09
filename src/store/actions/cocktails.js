@@ -13,3 +13,14 @@ export const saveCocktails = (data) => {
     payload: data,
   };
 };
+
+export const SET_FILTER_COCKTAILS_ID = "SET_FILTER_COCKTAILS_ID";
+export const setFilterCocktailsId = (id, type) => {
+  return {
+    type: SET_FILTER_COCKTAILS_ID,
+    payload: {
+      id: id,
+      type: type,
+    },
+  };
+};
