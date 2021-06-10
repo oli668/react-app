@@ -174,6 +174,7 @@ export const NavBar = ({ isSidemenu }) => {
                               className="py-1 px-2 w-auto cursor-pointer"
                               key={listId}
                               onClick={(e) => {
+                                dispatch(toggleSidemenu());
                                 history.push(
                                   `/filtered-content/${menu}/${item.content[
                                     "us"
