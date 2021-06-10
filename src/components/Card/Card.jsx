@@ -7,7 +7,7 @@ export const Card = (props) => {
   const history = useHistory();
   const [isShowOverlay, setIsShowOverlay] = useState(false);
   const language = useSelector((store) => store.header.language).toLowerCase();
-  const { name, mood, taste } = props;
+  const { name, mood, taste, spirits, category } = props;
   return (
     <div
       className={`font-main_theme py-4 px-2 h-auto relative cursor-pointer md:min-w-card md:max-w-card min-w-card_md max-w-card_md`}
@@ -30,41 +30,35 @@ export const Card = (props) => {
         <div className="absolute top-1/2 left-1/2 opacity-0 "></div>
         {isShowOverlay && (
           <div className="text-sm absolute top-4 md:top-10 left-6">
-            {/* <div className="flex w-full">
+            <div className="flex w-full">
               <span className="p-1 min-w-10 whitespace-nowrap">基酒:</span>
               <div className="flex flex-wrap p-1">
-                <span className="text-sm tracking-wide block font-sans px-1">
-                  {base}
+                <span className="text-sm tracking-wide font-sans flex flex-wrap">
+                  {spirits.map((spirit, id) => {
+                    return (
+                      <span
+                        key={id}
+                        className="text-sm tracking-wide block font-sans mr-1"
+                      >
+                        {spirit[language]}
+                      </span>
+                    );
+                  })}
                 </span>
               </div>
-            </div> */}
-            {/* <div className="flex w-full">
-              <span className="p-1 min-w-10 whitespace-nowrap">材料:</span>
-              <div className="flex flex-wrap p-1">
-                {side.map((item, id) => {
-                  return (
-                    <span
-                      key={id}
-                      className="text-sm tracking-wide font-sans px-1"
-                    >
-                      {item}
-                    </span>
-                  );
-                })}
-              </div>
-            </div> */}
+            </div>
             <div className="flex w-full">
               <span className="p-1 min-w-10 whitespace-nowrap">味道:</span>
               <div className="flex flex-wrap p-1">{taste[language]}</div>
             </div>
-            {/* <div className="flex">
+            <div className="flex">
               <span className="p-1 min-w-10 whitespace-nowrap">类型:</span>
               <div className="flex flex-wrap p-1">
-                <span className="text-sm tracking-wide block font-sans px-1">
-                  {type}
+                <span className="text-sm tracking-wide block font-sans">
+                  {category[language]}
                 </span>
               </div>
-            </div> */}
+            </div>
             <div className="flex w-full">
               <span className="p-1 min-w-10 whitespace-nowrap">心情:</span>
               <div className="flex flex-wrap p-1">{mood[language]}</div>
