@@ -47,7 +47,7 @@ export const SearchBar = () => {
   const [isSearching, setIsSearching] = useState(false);
   const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
   const language = useSelector((store) => store.header.language).toLowerCase();
-  const data = decrypt(cocktailsDetails);
+  const data = cocktailsDetails.length > 0 ? decrypt(cocktailsDetails) : [];
   const intl = useIntl();
   const debounceSearch = useRef(
     debounce((currInput) => {

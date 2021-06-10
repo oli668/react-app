@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { Card } from "components/Card/Card";
 import { useParams } from "react-router-dom";
 import { useIntl } from "react-intl";
@@ -49,11 +50,16 @@ const SearchTitle = () => {
 
 export const FilterPage = () => {
   const intl = useIntl();
+  const history = useHistory();
   const [currentCocktails, setCurrentCocktails] = useState([]);
   const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
   const filterCocktails = useSelector((store) => store.filterCocktails);
 
   useEffect(() => {
+    if (!cocktailsDetails.length) {
+      history.push("/");
+      return;
+    }
     const data = decrypt(cocktailsDetails);
     let filteredSpiritCocktails = data;
     if (filterCocktails.type === "liqours") {

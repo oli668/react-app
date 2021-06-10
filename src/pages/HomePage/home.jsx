@@ -14,7 +14,6 @@ const HomePage = () => {
   const intl = useIntl();
   const [currentCocktails, setCurrentCocktails] = useState([]);
   const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
-  const filterCocktails = useSelector((store) => store.filterCocktails);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,9 +25,11 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    const data = decrypt(cocktailsDetails);
-    setCurrentCocktails(data);
-  }, [filterCocktails.id]);
+    if (cocktailsDetails.length > 0) {
+      const data = decrypt(cocktailsDetails);
+      setCurrentCocktails(data);
+    }
+  }, [cocktailsDetails.length]);
 
   const getHotCocktails = () => {
     return currentCocktails
