@@ -123,7 +123,7 @@ export const NavBar = ({ isSidemenu }) => {
       )}
       {
         <div
-          className={`z-50 fixed md:hidden left-0  ${
+          className={`z-50 fixed md:hidden top-0 bottom-0 overflow-y-scroll  ${
             isShowSidemenu ? "animate-sidebarOpen block" : "hidden"
           }  bg-gray-dark min-h-screen w-72`}
         >
@@ -137,7 +137,7 @@ export const NavBar = ({ isSidemenu }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="white"
+              stroke="black"
             >
               <path
                 strokeLinecap="round"
@@ -147,6 +147,61 @@ export const NavBar = ({ isSidemenu }) => {
               />
             </svg>
           </button>
+          <button
+            className="mt-7 ml-10 border-black border-b-2 hover:border-b-2 hover:border-gray text-black focus:outline-none hover:px-2 py-2 text-lg font-medium"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            <span className="py-2 center">
+              {intl.formatMessage({ id: "HOME" })}
+            </span>
+          </button>
+          <div className="ml-10">
+            {Object.keys(dropdownMenuList)
+              .map((key) => dropdownMenuList[key])
+              .map((subMenu) => {
+                return Object.keys(subMenu).map((menu, menuKey) => {
+                  return (
+                    <div className="py-3" key={menuKey}>
+                      <div className="flex flex-col">
+                        <span className="font-bold uppercase">
+                          {subMenuMap[menu][language]}
+                        </span>
+                        {subMenu[menu].map((item, listId) => {
+                          return (
+                            <div
+                              className="py-1 px-2 w-auto cursor-pointer"
+                              key={listId}
+                              onClick={(e) => {
+                                history.push(
+                                  `/filtered-content/${menu}/${item.content[
+                                    "us"
+                                  ]
+                                    .split(" ")
+                                    .join("")}/${cryptoRandomString({
+                                    length: 10,
+                                  })}`
+                                );
+                                showDropdownList(null);
+                                handleSubMenuClick(item.id, menu);
+                              }}
+                            >
+                              <span
+                                className="hover:shadow-lg 
+                        text-black-light hover:text-black font-small"
+                              >
+                                {item.content[language]}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                });
+              })}
+          </div>
         </div>
       }
     </div>
