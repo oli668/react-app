@@ -10,7 +10,7 @@ const persistConfig = {
   // configuration object for redux-persist
   key: "root",
   storage, // define which storage to use,
-  whitelist: ["cocktailsDetails"],
+  whitelist: ["cocktailsDetails", "filterCocktails"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer); // create a persisted reducer
