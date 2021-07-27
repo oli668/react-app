@@ -7,6 +7,7 @@ import {
   toggleLoginModal,
 } from "store/actions/header";
 import { NavBar } from "./NavBar";
+import { navItems, dropdownMenuList, subMenuMap } from "./data";
 import { SearchBar } from "./SearchBar";
 import { SideMenu } from "components/ShoppingCart/SideMenu";
 import { setLanguage } from "store/actions/header";
@@ -21,7 +22,7 @@ export const Header = () => {
   });
   const { items } = useSelector((store) => store.shoppingCart);
   return (
-    <div className="bg-gray relative">
+    <div className="bg-black-light relative">
       <div className="container w-full md:w-2/3 my-0 mx-auto px-2 2xl:px-0 bg-clip-content">
         <div className="px-2 md:px-0 flex-shrink-0 flex justify-between x-2 pt-3">
           <div className="md:m-0 my-0 flex-shrink-0 flex items-center x-2 px-1 w-full">
@@ -29,7 +30,10 @@ export const Header = () => {
               <div className="container w-full hidden md:block">
                 <NavBar
                   isSidemenu={false}
-                  className="flex flex-row absolute"
+                  navItems={navItems}
+                  subMenuMap={subMenuMap}
+                  dropdownMenuList={dropdownMenuList}
+                  className="flex flex-row absolut"
                 ></NavBar>
               </div>
               <div className="flex w-full justify-left md:hidden">
@@ -40,7 +44,7 @@ export const Header = () => {
                   }}
                   className={`${
                     !isShowSidemenu ? "visible" : "invisible"
-                  } inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-black hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:none`}
+                  } inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:none`}
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
@@ -77,7 +81,7 @@ export const Header = () => {
                     }}
                   >
                     <svg
-                      className="w-8 mx-2.5"
+                      className="w-8 mx-2.5 text-white"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -100,7 +104,7 @@ export const Header = () => {
                   }}
                 >
                   <span
-                    className={`absolute bottom-1/2 ${
+                    className={`absolute bottom-1/2 text-white ${
                       items.length > 9 ? "left-5" : "left-6"
                     }`}
                   >
@@ -109,7 +113,7 @@ export const Header = () => {
                     }, 0)}
                   </span>
                   <svg
-                    className="w-8 mx-2.5 my-auto"
+                    className="w-8 mx-2.5 my-auto text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -131,7 +135,7 @@ export const Header = () => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-8"
+                    className="w-8 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -145,7 +149,7 @@ export const Header = () => {
                   </svg>
                 </div>
                 <button
-                  className="w-8 cursor-pointer focus:outline-none ml-2"
+                  className="w-8 cursor-pointer focus:outline-none ml-2 text-white"
                   onClick={() => {
                     dispatch(setLanguage(selectedLanguage ? "CH" : "US"));
                     setSelectedLanguage(!selectedLanguage);
