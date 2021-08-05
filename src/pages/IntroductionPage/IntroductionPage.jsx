@@ -1,33 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React from "react";
 import { NavBar } from "components/Header/NavBar";
 import { IntroductionPageNavItems } from "components/Header/data";
 import { MacbookPro } from "components/WithoutTailwind/Macbook";
 import { MobileAppUI } from "components/WithoutTailwind/MobileApp";
+import { Carousel } from "./Carousel";
 import background from "images/background.png";
-import slickImg1 from "images/1.png";
-import slickImg2 from "images/2.png";
-import slickImg3 from "images/3.png";
+
 // import { Footer } from "components/Footer/Footer";
 import { Gradient } from "shared/Gradient";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 export const IntroductionPage = () => {
   var gradient = new Gradient();
-  const [activeSlideIndex, setActiveState] = useState(0);
   gradient.initGradient("#gradient-canvas");
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    beforeChange: (current, next) => setActiveState(next),
-  };
+
   return (
     <>
       <div className="w-full flex justify-center relative h-96">
@@ -100,82 +87,7 @@ export const IntroductionPage = () => {
           </div>
         </div>
       </div>
-
-      <div className="flex mt-28 w-full p-10">
-        <div className="flex-1 flex w-1/2 justify-center items-center">
-          <div className="flex flex-col justify-center items-center">
-            <div
-              className={`flex flex-col justify-center items-center ${
-                activeSlideIndex === 0 ? "block" : "hidden"
-              }`}
-            >
-              <div className="text-center p-3">
-                <span className="text-5xl">服务价值</span>
-              </div>
-              <div className="mx-20">
-                <li className="p-2">高效的沟通模式 创造用户想要的产品</li>
-                <li className="p-2">业界的领先的设计方案 设计出产品原型</li>
-                <li className="p-2">稳定的程序设计方案 开发出稳定的产品</li>
-              </div>
-            </div>
-            <div
-              className={`flex flex-col ${
-                activeSlideIndex === 1 ? "block" : "hidden"
-              }`}
-            >
-              <div className="text-center p-3 ">
-                <span className="text-5xl">竞争优势</span>
-              </div>
-              <div className="mx-20">
-                <li className="p-2">高效的沟通模式 创造用户想要的产品</li>
-                <li className="p-2">业界的领先的设计方案 设计出产品原型</li>
-                <li className="p-2">稳定的程序设计方案 开发出稳定的产品</li>
-              </div>
-            </div>
-            <div
-              className={`flex flex-col ${
-                activeSlideIndex === 2 ? "block" : "hidden"
-              }`}
-            >
-              <div className="text-center p-3">
-                <span className="text-5xl">合作伙伴</span>
-              </div>
-              <div className="mx-20">
-                <li className="p-2">高效的沟通模式 创造用户想要的产品</li>
-                <li className="p-2">业界的领先的设计方案 设计出产品原型</li>
-                <li className="p-2">稳定的程序设计方案 开发出稳定的产品</li>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-1 w-1/2 flex m-5">
-          <div className="w-full">
-            <Slider {...settings}>
-              <div className="h-96">
-                <img
-                  className="h-full w-full object-contain"
-                  src={slickImg1}
-                  alt=""
-                />
-              </div>
-              <div className="h-96">
-                <img
-                  className="h-full w-full object-contain"
-                  src={slickImg2}
-                  alt=""
-                />
-              </div>
-              <div className="h-96">
-                <img
-                  className="h-full w-full object-contain"
-                  src={slickImg3}
-                  alt=""
-                />
-              </div>
-            </Slider>
-          </div>
-        </div>
-      </div>
+      <Carousel></Carousel>
       <div className="flex-1 p-5">
         <MobileAppUI></MobileAppUI>
       </div>

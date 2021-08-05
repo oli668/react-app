@@ -8,7 +8,7 @@ export const MobileAppUI = () => {
       <div
         className="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden relative flex"
         style={{
-          width: "414px",
+          width: "auto",
           height: "736px",
         }}
       >
