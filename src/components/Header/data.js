@@ -197,24 +197,3 @@ export const dropdownMenuList = {
   blog: {},
   tools: {},
 };
-
-export const IntroductionPageNavItems = [
-  {
-    id: "about",
-    content: { ch: "关于我们", us: "About us" },
-    name: "about",
-    isSubmenu: true,
-  },
-  {
-    id: "missions",
-    content: { ch: "我们的业务", us: "What we do" },
-    name: "do",
-    isSubmenu: true,
-  },
-  {
-    id: "join",
-    content: { ch: "加入我们", us: "Join us" },
-    name: "join",
-    isSubmenu: true,
-  },
-];
