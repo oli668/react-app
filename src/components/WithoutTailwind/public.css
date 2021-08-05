@@ -1,41 +1,51 @@
 .macbook {
-    height: 400px;
-    width: 600px;
+    height: 300px;
+    width: 500px;
     background: #292a2b;
     margin: 50px auto;
     border-radius: .5px .5px 0 0;
     box-shadow: 0 0 0 35px #000, 0 0 0 38px darkgray;
     position: relative;
+    transform: scale(0.8);
     background-image: linear-gradient(-30deg, transparent 0px, transparent 26px, #9d9ea3 26px, #dfe0e2 27px, transparent 27px, transparent 73px, #626367 73px, #626367 74px, transparent 177px), linear-gradient(-30deg, #636468 0px, #9d9ea3 16px, #dfe0e2 16px, #626367 17px, transparent 17px), linear-gradient(-30deg, #636468 1px, #f7f7f7 10px, #f7f7f7 20px, transparent 40px, transparent 500px, #949698 820px, #949698 860px, #f7f7f7 880px, #f7f7f7 890px, #636468 899px);
   }
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 1240px){
     .macbook{
-        width: 400px;
-        height: 250px;
-        display:none;
+        transform: scale(0.7);
     }
   };
-  
+
+  @media only screen and (max-width: 425px){
+    .macbook{
+      transform: scale(0.6);
+      height: 250px;
+      width: 400px;
+      border-radius: .5px .5px .5px .5px;
+    }
+  };
+
+  @media only screen and (min-width: 426px) and  (max-width: 768px){
+    .macbook{
+        transform: scale(0.5);
+    }
+  };
   .macbook:before {
     content: '\0000a0\0000a0\0000a0';
     text-decoration: overline;
     color: black;
     line-height: 40px;
-    padding-left: 900px;
+    padding-left: 637px;
     font-size: 42px;
-    height: 50px;
-    width: 80px;
+    height: 41px;
+    /* width: 80px; */
     background: #d9dadc;
-  -webkit-box-reflect: 
-        below 0px 
-        -webkit-gradient(linear, left top, left bottom, 
-           from(transparent), color-stop(5, transparent), to(white));
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(5, transparent), to(white));
     -moz-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.1)));
     background-image: linear-gradient(to top, black 0px, #636468 2px, #9d9ea3 16px, #dfe0e2 16px, #626367 17px, #626367 18px, transparent 18px), linear-gradient(to right, #636468 1px, #f7f7f7 10px, #f7f7f7 20px, transparent 40px, transparent 500px, #949698 820px, #949698 860px, #f7f7f7 880px, #f7f7f7 890px, #636468 899px);
     position: absolute;
-    top: 430px;
+    top: 335px;
     margin: 20 auto;
-    left: -150px;
+    left: -87px;
     border-bottom: 3px solid violet;
     border-bottom-right-radius: 12% 45%;
     border-bottom-left-radius: 12% 45%;
@@ -43,22 +53,46 @@
     z-index: 9999;
     border-image-repeat: stretch;
   }
-  
+
+  @media only screen and (min-width: 426px) and (max-width: 475px){
+    .macbook::before{
+      left: -100px;
+      padding-left: 597px;
+    }
+  };
+
+  @media only screen and (max-width: 425px){
+    .macbook::before{
+      display:none;
+    }
+  };
+ 
   .macbook:after {
     content: '\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0o\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\0000a0\0000a0\0000a0\0000a0\0000a0';
     white-space: pre;
     color: grey;
-    height: 476px;
-    width: 140px;
+    height: 383px;
+    width: 132px;
     background: transparent;
     background-image: linear-gradient(to top, transparent 7px, rgba(222, 222, 222, .3) 9px, transparent 19px), linear-gradient(to top, #636468 7px, transparent 19px);
     border-radius: 0 0 20px 20px;
     position: absolute;
-    top: -30px;
-    left: 240px;
+    top: -32px;
+    left: 178px;
     z-index: 9999;
   }
+  @media only screen and (min-width: 426px) and (max-width: 475px){
+    .macbook::after{
+      left:143px;
+    }
+  };
 
+  @media only screen and (max-width: 425px){
+    .macbook::after{
+    left:128px;
+    background-image:none;
+    }
+  };
 .typing {
     width: 20em; height: 1.25em;
     border-right: 1px solid transparent;
@@ -78,7 +112,7 @@
     overflow: hidden;
 }
 .typing-thrid{
-    width: 35em; height: 1.25em;
+    width: 22em; height: 1.25em;
     visibility: hidden;
     border-right: 1px solid transparent;
     animation: typing-third 3.5s steps(37,end) forwards, blink-caret .75s step-end infinite;
@@ -94,7 +128,7 @@
     }
     100% {
       overflow: hidden;
-      width:35em;
+      width:22em;
       visibility: visible;
     }
 }
