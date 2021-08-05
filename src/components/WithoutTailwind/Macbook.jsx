@@ -11,7 +11,7 @@ export const MacbookPro = () => {
         闲话不多说 先上代码！
       </div>
       <div className="typing-thrid text-white mx-5 absolute top-5">
-        {`#include <stdio.h> printf("hello world") (咕噜铁汁工作室制作)`}
+        {`#include <stdio.h> printf("咕噜铁汁") `}
       </div>
     </div>
   );

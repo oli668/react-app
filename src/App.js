@@ -9,7 +9,6 @@ import { IntroductionPage } from "pages/IntroductionPage/IntroductionPage";
 import { Details } from "pages/DetailsPage/Details";
 import { Header } from "components/Header/Header";
 import { NavBar } from "components/Header/NavBar";
-import { navItems, dropdownMenuList, subMenuMap } from "components/Header/data";
 import { IntlProvider } from "react-intl";
 import languages from "translations/translations";
 import { flattenNestedObject } from "shared/DataUtils";
@@ -19,6 +18,7 @@ import { Divider } from "components/Divider/Divider";
 import { CheckoutPage } from "pages/CheckoutPage/CheckoutPage";
 import { FilterPage } from "pages/FilterPage/FilterPage";
 import { Register } from "components/Register/Register";
+import { IntroductionPageNavItems } from "components/Header/data";
 const App = () => {
   const history = useHistory();
   const [isLogin, setLoginStatus] = useState();
@@ -43,12 +43,13 @@ const App = () => {
         messages={flatLanguagues}
         textComponent={React.Fragment}
       >
-        <NavBar
+        {/* <NavBar
           isSidemenu
           navItems={navItems}
           dropdownMenuList={dropdownMenuList}
           subMenuMap={subMenuMap}
-        ></NavBar>
+        ></NavBar> */}
+        <NavBar isSidemenu navItems={IntroductionPageNavItems}></NavBar>
         {isUserLogin && isLogin ? <Register></Register> : ""}
         {!showProject && <IntroductionPage></IntroductionPage>}
         {showProject && (
