@@ -1,0 +1,136 @@
+.macbook {
+    height: 400px;
+    width: 600px;
+    background: #292a2b;
+    margin: 50px auto;
+    border-radius: .5px .5px 0 0;
+    box-shadow: 0 0 0 35px #000, 0 0 0 38px darkgray;
+    position: relative;
+    background-image: linear-gradient(-30deg, transparent 0px, transparent 26px, #9d9ea3 26px, #dfe0e2 27px, transparent 27px, transparent 73px, #626367 73px, #626367 74px, transparent 177px), linear-gradient(-30deg, #636468 0px, #9d9ea3 16px, #dfe0e2 16px, #626367 17px, transparent 17px), linear-gradient(-30deg, #636468 1px, #f7f7f7 10px, #f7f7f7 20px, transparent 40px, transparent 500px, #949698 820px, #949698 860px, #f7f7f7 880px, #f7f7f7 890px, #636468 899px);
+  }
+  @media only screen and (max-width: 768px){
+    .macbook{
+        width: 400px;
+        height: 250px;
+        display:none;
+    }
+  };
+  
+  .macbook:before {
+    content: '\0000a0\0000a0\0000a0';
+    text-decoration: overline;
+    color: black;
+    line-height: 40px;
+    padding-left: 900px;
+    font-size: 42px;
+    height: 50px;
+    width: 80px;
+    background: #d9dadc;
+  -webkit-box-reflect: 
+        below 0px 
+        -webkit-gradient(linear, left top, left bottom, 
+           from(transparent), color-stop(5, transparent), to(white));
+    -moz-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.1)));
+    background-image: linear-gradient(to top, black 0px, #636468 2px, #9d9ea3 16px, #dfe0e2 16px, #626367 17px, #626367 18px, transparent 18px), linear-gradient(to right, #636468 1px, #f7f7f7 10px, #f7f7f7 20px, transparent 40px, transparent 500px, #949698 820px, #949698 860px, #f7f7f7 880px, #f7f7f7 890px, #636468 899px);
+    position: absolute;
+    top: 430px;
+    margin: 20 auto;
+    left: -150px;
+    border-bottom: 3px solid violet;
+    border-bottom-right-radius: 12% 45%;
+    border-bottom-left-radius: 12% 45%;
+    border-image: linear-gradient(to bottom, yellow, rgba(0, 0, 0, 1)) 20 10%;
+    z-index: 9999;
+    border-image-repeat: stretch;
+  }
+  
+  .macbook:after {
+    content: '\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0\0000a0o\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\A\0000a0\0000a0\0000a0\0000a0\0000a0';
+    white-space: pre;
+    color: grey;
+    height: 476px;
+    width: 140px;
+    background: transparent;
+    background-image: linear-gradient(to top, transparent 7px, rgba(222, 222, 222, .3) 9px, transparent 19px), linear-gradient(to top, #636468 7px, transparent 19px);
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    top: -30px;
+    left: 240px;
+    z-index: 9999;
+  }
+
+.typing {
+    width: 20em; height: 1.25em;
+    border-right: 1px solid transparent;
+    animation: typing 5s steps(37,end) forwards, blink-caret .75s step-end infinite;
+    font-family: Consolas, Monaco;
+    word-break: break-all;
+    overflow: hidden;
+}
+.typing-sec{
+    width: 11.5em; height: 1.25em;
+    visibility: hidden;
+    border-right: 1px solid transparent;
+    animation: typing-sec 2.5s steps(37,end) forwards, blink-caret .75s step-end infinite;
+    animation-delay: 5s;
+    font-family: Consolas, Monaco;
+    word-break: break-all;
+    overflow: hidden;
+}
+.typing-thrid{
+    width: 35em; height: 1.25em;
+    visibility: hidden;
+    border-right: 1px solid transparent;
+    animation: typing-third 3.5s steps(37,end) forwards, blink-caret .75s step-end infinite;
+    animation-delay: 8s;
+    font-family: Consolas, Monaco;
+    word-break: break-all;
+    overflow: hidden;
+}
+@keyframes typing-third {
+    0% {
+      display: block;
+      width:0;
+    }
+    100% {
+      overflow: hidden;
+      width:35em;
+      visibility: visible;
+    }
+}
+/* 打印效果 */
+@keyframes typing-sec {
+    0% {
+        display: block;
+        visibility: visible;
+        width:0;
+    }
+    50% {
+        width:11.5em;
+    }
+    100% {
+        overflow: hidden;
+        display: none;
+        visibility: hidden
+    }
+}
+@keyframes typing {
+      0% {
+        display: block;
+        visibility: visible;
+        width:0;
+      }
+      50% {
+        width:20em;
+      }
+      100% {
+        overflow: hidden;
+        display: none;
+        visibility: hidden
+      }
+}
+/* 光标闪啊闪 */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: currentColor; }
+}
