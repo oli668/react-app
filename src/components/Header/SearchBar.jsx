@@ -151,7 +151,7 @@ export const SearchBar = () => {
           placeholder="Search"
         />
         <div className="p-4">
-          <button className="text-black-light rounded-full p-2 focus:outline-none w-10 md:h10 h6 flex items-center justify-center">
+          <button className="text-white rounded-full p-2 focus:outline-none w-10 md:h10 h6 flex items-center justify-center">
             {isSearching ? <LoaderIcon /> : <SearchIcon />}
           </button>
         </div>
