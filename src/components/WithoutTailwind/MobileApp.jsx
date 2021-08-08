@@ -3,12 +3,11 @@ import React from "react";
 
 export const MobileAppUI = () => {
   return (
-    <div className="min-w-screen bg-gray flex flex-col items-center justify-center px-5">
-      <div className="text-center text-3xl p-5">设计案例展示</div>
+    <div className="min-w-screeflex flex-col items-center justify-center px-5">
       <div
         className="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden relative flex"
         style={{
-          width: "auto",
+          width: "425px",
           height: "736px",
         }}
       >

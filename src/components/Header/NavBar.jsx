@@ -34,7 +34,7 @@ export const NavBar = ({
       {!isSidemenu && (
         <div className="hidden space-x-4 md:flex">
           <button
-            className="text-white focus:outline-none hover:px-2 py-2 text-xl font-bold"
+            className="text-black focus:outline-none hover:px-2 py-2 text-xl font-bold"
             onClick={() => {
               history.push("/");
             }}
@@ -48,7 +48,7 @@ export const NavBar = ({
               <div key={id} className="">
                 <button
                   name={item.name}
-                  className="text-white focus:outline-none hover:px-2 py-2 text-xl font-bold"
+                  className="text-black focus:outline-none hover:px-2 py-2 text-xl font-bold"
                   onClick={() => {
                     dropdownMenuList
                       ? showDropdownList(item.id)
@@ -84,7 +84,7 @@ export const NavBar = ({
                               return (
                                 <div className="px-3 py-3" key={menuKey}>
                                   <div className="flex flex-col">
-                                    <span className="border-black-light text-white border-b-2 font-bold uppercase">
+                                    <span className="border-black-light text-black border-b-2 font-bold uppercase">
                                       {subMenuMap && subMenuMap[menu][language]}
                                     </span>
                                     {subMenuMap &&

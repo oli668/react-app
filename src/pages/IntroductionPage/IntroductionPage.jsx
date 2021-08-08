@@ -3,11 +3,11 @@ import React from "react";
 import { NavBar } from "components/Header/NavBar";
 import { IntroductionPageNavItems } from "components/Header/data";
 import { MacbookPro } from "components/WithoutTailwind/Macbook";
-import { MobileAppUI } from "components/WithoutTailwind/MobileApp";
 import { Carousel } from "./Carousel";
+import { PresentImages } from "./PresentImages";
 import background from "images/background.png";
 
-// import { Footer } from "components/Footer/Footer";
+import { Footer } from "components/Footer/Footer";
 import { Gradient } from "shared/Gradient";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -34,7 +34,7 @@ export const IntroductionPage = () => {
                 d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-white w-full font-bold text-lg absolute px-10 sm:text-2xl">
+            <span className="text-black w-full font-bold text-lg absolute px-10 sm:text-2xl">
               咕噜铁汁科技
             </span>
           </div>
@@ -48,10 +48,10 @@ export const IntroductionPage = () => {
         </div>
         <canvas
           style={{
-            "--gradient-color-1": "#a960ee",
-            "--gradient-color-2": "#ff333d",
-            "--gradient-color-3": "#90e0ff",
-            "--gradient-color-4": "#ffcb57",
+            "--gradient-color-1": "#7C83FD",
+            "--gradient-color-2": "#96BAFF",
+            "--gradient-color-3": "#7DEDFF",
+            "--gradient-color-4": "#88FFF7",
             width: "100%",
             height: "350px",
             position: "absolute",
@@ -87,11 +87,10 @@ export const IntroductionPage = () => {
           </div>
         </div>
       </div>
+
       <Carousel></Carousel>
-      <div className="flex-1 p-5">
-        <MobileAppUI></MobileAppUI>
-      </div>
-      {/* <Footer></Footer> */}
+      <PresentImages></PresentImages>
+      <Footer></Footer>
     </>
   );
 };
