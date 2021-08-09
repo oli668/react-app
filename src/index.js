@@ -4,6 +4,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store, persistor } from "./store/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { ParallaxProvider } from "react-scroll-parallax";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
@@ -11,7 +12,9 @@ ReactDOM.render(
   <>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <App />
+        <ParallaxProvider>
+          <App />
+        </ParallaxProvider>
       </PersistGate>
     </Provider>
   </>,
