@@ -7,7 +7,7 @@ import { Carousel } from "./Carousel";
 import { PresentImages } from "./PresentImages";
 import background from "images/background.png";
 
-import { Footer } from "components/Footer/Footer";
+// import { Footer } from "components/Footer/Footer";
 import { Gradient } from "shared/Gradient";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -90,7 +90,7 @@ export const IntroductionPage = () => {
 
       <Carousel></Carousel>
       <PresentImages></PresentImages>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 };

@@ -1,12 +1,6 @@
 import React from "react";
-import sample from "images/sample.png";
 import h1 from "images/h1.jpg";
 import h2 from "images/h2.jpg";
-import h3 from "images/h3.jpg";
-import h4 from "images/h4.jpg";
-import h5 from "images/h5.jpg";
-import h6 from "images/h6.jpg";
-import background from "images/background.png";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { MobileAppUI } from "components/WithoutTailwind/MobileApp";
 import { Parallax } from "react-scroll-parallax";
@@ -36,7 +30,7 @@ export const PresentImages = () => {
         </div>
       </ParallaxBanner>
       <div className="flex justify-between mx-20">
-        <div class="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center">
           <Fade left>
             <Parallax
               className="custom-class"
@@ -104,7 +98,7 @@ export const PresentImages = () => {
             </Parallax>
           </Zoom>
         </div>
-        <div class="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center">
           <Fade left>
             <Parallax
               className="custom-class"
