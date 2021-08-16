@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import slickImg1 from "images/1.png";
 import slickImg2 from "images/2.png";
 import slickImg3 from "images/3.png";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 export const Carousel = () => {
   const [activeSlideIndex, setActiveState] = useState(0);
   const settings = {
@@ -10,7 +12,7 @@ export const Carousel = () => {
     infinite: true,
     speed: 1000,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 7000,
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -33,15 +35,16 @@ export const Carousel = () => {
             }`}
           >
             <div className="text-center p-3">
-              <span className="text-3xl xl:text-5xl">服务价值</span>
+              <span className="text-3xl xl:text-5xl">公司概况</span>
             </div>
             <div className="mx-20 w-full md:mx-10">
               <li className="p-2">
-                1高效的沟通模式 创造用户想要的产品 2高效的沟通模式
-                创造用户想要的产品
+                本公司秉承“提供一流的服务，实现共赢的合作”的理念，为海量客户提供优质的互联网一站式设计开发服务。
+                主要业务：包括技术咨询、产品设计、项目开发和售后运维服务、提供人员驻点、技术指导和招聘培训服务等。
               </li>
-              <li className="p-2">1业界的领先的设计方案 设计出产品原型</li>
-              <li className="p-2">1稳定的程序设计方案 开发出稳定的产品</li>
+              <li className="p-2">
+                主要业务：包括技术咨询、产品设计、项目开发和售后运维服务、提供人员驻点、技术指导和招聘培训服务等
+              </li>
             </div>
           </div>
           <div
@@ -50,15 +53,14 @@ export const Carousel = () => {
             }`}
           >
             <div className="text-center p-3 ">
-              <span className="text-3xl xl:text-5xl">竞争优势</span>
+              <span className="text-3xl xl:text-5xl">企业文化</span>
             </div>
             <div className="mx-20 w-full md:mx-10">
-              <li className="p-2">2高效的沟通模式 创造用户想要的产品</li>
+              <li className="p-2">使命 —— 立足技术创新，支撑产业发展升级</li>
+              <li className="p-2">展望 —— 为行业提供安全技术保障</li>
               <li className="p-2">
-                2业界的领先的设计方案 2高效的沟通模式 创造用户想要的产品
-                设计出产品原型
+                价值 —— 以客户为导向，为客户创造更多的增量价值，实现合作共赢
               </li>
-              <li className="p-2">2稳定的程序设计方案 开发出稳定的产品</li>
             </div>
           </div>
           <div
@@ -67,15 +69,13 @@ export const Carousel = () => {
             }`}
           >
             <div className="text-center p-3">
-              <span className="text-3xl xl:text-5xl">合作伙伴</span>
+              <span className="text-3xl xl:text-5xl">服务优势</span>
             </div>
             <div className="mx-20 w-full md:mx-10">
-              <li className="p-2">3高效的沟通模式 创造用户想要的产品</li>
-              <li className="p-2">3业界的领先的设计方案 设计出产品原型</li>
-              <li className="p-2">
-                3稳定的程序设计方案 2高效的沟通模式 创造用户想要的产品
-                开发出稳定的产品
-              </li>
+              <li className="p-2">设计方案：与时俱进，高规格建立设计体系</li>
+              <li className="p-2">沟通模式：高效细节，高标准打造交流体系</li>
+              <li className="p-2">专业团队：精益求精，高要求建设团队体系</li>
+              <li className="p-2">产品产出：因势利导，高层次构建产品体系</li>
             </div>
           </div>
         </div>

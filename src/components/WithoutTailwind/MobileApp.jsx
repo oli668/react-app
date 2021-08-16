@@ -1,21 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-
+import Icon from "images/icon.png";
+import Icon2 from "images/icon2.png";
+import Icon3 from "images/icon3.png";
+import Icon4 from "images/icon4.png";
 export const MobileAppUI = () => {
   return (
-    <div className="min-w-screeflex flex-col items-center justify-center px-5">
+    <div className="min-w-screeflex flex-col items-center justify-center px-5 shadow-inner border-black-light hidden md:block">
       <div
-        className="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden relative flex"
+        className="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden relative flex w-full md:w-3/4"
         style={{
-          width: "425px",
           height: "736px",
+          width: "435px",
         }}
       >
         <div className="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
           <div className="mb-3">
-            <h1 className="text-3xl font-bold">Today</h1>
+            <h1 className="text-3xl font-bold">今日新闻</h1>
             <p className="text-sm text-gray-500 uppercase font-bold">
-              THURSDAY 6 AUGUST
+              2021年8月6日
             </p>
           </div>
           <div className="mb-5">
@@ -28,15 +31,9 @@ export const MobileAppUI = () => {
                 backgroundSize: "cover",
               }}
             >
-              <div className="absolute top-0 right-0 -mt-3 mr-3">
-                <div className="rounded-full bg-indigo-500 text-white text-xs py-1 pl-2 pr-3 leading-none">
-                  <i className="mdi mdi-fire text-base align-middle"></i>{" "}
-                  <span className="align-middle">FRESH</span>
-                </div>
-              </div>
               <div className="h-48"></div>
               <h2 className="text-white text-2xl font-bold leading-tight mb-3 pr-5">
-                Tasnim Lacey New Album Out&nbsp;Now
+                草莓音乐节演出举办日程
               </h2>
               <div className="flex w-full items-center text-sm text-gray-300 font-medium">
                 <div className="flex-1 flex items-center">
@@ -48,10 +45,10 @@ export const MobileAppUI = () => {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                  <div>Gwen Thomson</div>
+                  <div className="text-white">艾丽 比尔</div>
                 </div>
                 <div>
-                  <i className="mdi mdi-thumb-up"></i> 18
+                  <p className="mdi mdi-thumb-up text-white">18</p>
                 </div>
               </div>
             </a>
@@ -68,7 +65,7 @@ export const MobileAppUI = () => {
             >
               <div className="h-48"></div>
               <h2 className="text-white text-2xl font-bold leading-tight mb-3 pr-5">
-                Top 5 Cocktail Bars in&nbsp;NYC
+                杭州最好的鸡尾酒吧
               </h2>
               <div className="flex w-full items-center text-sm text-gray-300 font-medium">
                 <div className="flex-1 flex items-center">
@@ -80,18 +77,18 @@ export const MobileAppUI = () => {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                  <div>Kayden Buckley</div>
+                  <div className="text-white">卡特琳 贝拉</div>
                 </div>
                 <div>
-                  <i className="mdi mdi-thumb-up"></i> 7
+                  <p className="mdi mdi-thumb-up text-white">7</p>
                 </div>
               </div>
             </a>
           </div>
           <div className="mb-3">
-            <h1 className="text-3xl font-bold">Yesterday</h1>
+            <h1 className="text-3xl font-bold">昨日最佳</h1>
             <p className="text-sm text-gray-500 uppercase font-bold">
-              WEDNESDAY 5 AUGUST
+              2021年8月5日
             </p>
           </div>
           <div className="flex -mx-1 mb-5">
@@ -107,7 +104,7 @@ export const MobileAppUI = () => {
               >
                 <div className="h-24"></div>
                 <h3 className="text-lg font-bold text-white leading-tight">
-                  DJ Dan Spins The Wheels
+                  专业DJ教你如何打碟
                 </h3>
               </a>
               <a
@@ -121,7 +118,7 @@ export const MobileAppUI = () => {
               >
                 <div className="h-32"></div>
                 <h3 className="text-lg font-bold text-white leading-tight">
-                  Top Travels Destinations For 2020
+                  今年十个最佳的旅游景点
                 </h3>
               </a>
             </div>
@@ -137,7 +134,7 @@ export const MobileAppUI = () => {
               >
                 <div className="h-32"></div>
                 <h3 className="text-lg font-bold text-white leading-tight">
-                  M&S Launches New Makeup Range!
+                  奥利维亚教你如何画最潮的妆
                 </h3>
               </a>
               <a
@@ -151,13 +148,13 @@ export const MobileAppUI = () => {
               >
                 <div className="h-24"></div>
                 <h3 className="text-lg font-bold text-white leading-tight">
-                  APT Set To Be A&nbsp;Ripper
+                  女子网球决赛在北京如期举行
                 </h3>
               </a>
             </div>
           </div>
           <div className="mb-3">
-            <h1 className="text-3xl font-bold">Previous</h1>
+            <h1 className="text-3xl font-bold">人们都在看</h1>
           </div>
           <div>
             <a
@@ -174,10 +171,10 @@ export const MobileAppUI = () => {
               ></div>
               <div className="pl-3 w-3/5">
                 <p className="text-xs text-gray-500 uppercase font-semibold">
-                  SPORTS
+                  运动
                 </p>
                 <h3 className="text-md font-semibold leading-tight mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  蝶式游泳奥运冠军的艰苦训练经历
                 </h3>
                 <div className="flex w-full items-center text-xs text-gray-500 font-medium">
                   <div
@@ -188,7 +185,7 @@ export const MobileAppUI = () => {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                  <div>Jack Ryan</div>
+                  <div>杰克 瑞尔</div>
                 </div>
               </div>
             </a>
@@ -209,10 +206,10 @@ export const MobileAppUI = () => {
               ></div>
               <div className="pl-3 w-3/5">
                 <p className="text-xs text-gray-500 uppercase font-semibold">
-                  ART
+                  艺术
                 </p>
                 <h3 className="text-md font-semibold leading-tight mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  那些城市街头的最美涂鸦
                 </h3>
                 <div className="flex w-full items-center text-xs text-gray-500 font-medium">
                   <div
@@ -223,7 +220,7 @@ export const MobileAppUI = () => {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                  <div>Kevin Jackson</div>
+                  <div>凯文 杰克逊</div>
                 </div>
               </div>
             </a>
@@ -243,10 +240,10 @@ export const MobileAppUI = () => {
               ></div>
               <div className="pl-3 w-3/5">
                 <p className="text-xs text-gray-500 uppercase font-semibold">
-                  MUSIC
+                  音乐
                 </p>
                 <h3 className="text-md font-semibold leading-tight mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  500RMB价位能买到的性价比最高的耳机
                 </h3>
                 <div className="flex w-full items-center text-xs text-gray-500 font-medium">
                   <div
@@ -257,7 +254,7 @@ export const MobileAppUI = () => {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                  <div>Rowena Wheeler</div>
+                  <div>罗琳 李</div>
                 </div>
               </div>
             </a>
@@ -278,10 +275,10 @@ export const MobileAppUI = () => {
               ></div>
               <div className="pl-3 w-3/5">
                 <p className="text-xs text-gray-500 uppercase font-semibold">
-                  WORLD
+                  世界
                 </p>
                 <h3 className="text-md font-semibold leading-tight mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  世界人口最密集的城市
                 </h3>
                 <div className="flex w-full items-center text-xs text-gray-500 font-medium">
                   <div
@@ -292,22 +289,21 @@ export const MobileAppUI = () => {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                  <div>Gwen Thomson</div>
+                  <div>艾丽 比尔</div>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div className="bg-white absolute bottom-0 w-full border-t border-gray-200 flex">
+        <div className="bg-white absolute bottom-0 w-full border-gray-200 flex">
           <a
             href="#"
             className="flex flex-grow items-center justify-center p-2 text-indigo-500 hover:text-indigo-500"
           >
             <div className="text-center">
-              <span className="block h-8 text-3xl leading-8">
-                <i className="mdi mdi-newspaper-variant-outline"></i>
+              <span className="block h-8 text-xl leading-8">
+                <img src={Icon} alt="" className="w-8" />
               </span>
-              <span className="block text-xs leading-none">Today</span>
             </div>
           </a>
           <a
@@ -315,10 +311,9 @@ export const MobileAppUI = () => {
             className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
           >
             <div className="text-center">
-              <span className="block h-8 text-3xl leading-8">
-                <i className="mdi mdi-apps"></i>
+              <span className="block h-8 text-xl leading-8">
+                <img src={Icon2} alt="" className="w-8" />
               </span>
-              <span className="block text-xs leading-none">Categories</span>
             </div>
           </a>
           <a
@@ -326,10 +321,9 @@ export const MobileAppUI = () => {
             className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
           >
             <div className="text-center">
-              <span className="block h-8 text-3xl leading-8">
-                <i className="mdi mdi-star-outline"></i>
+              <span className="block h-8 text-xl leading-8">
+                <img src={Icon3} alt="" className="w-8" />
               </span>
-              <span className="block text-xs leading-none">Favorites</span>
             </div>
           </a>
           <a
@@ -337,10 +331,9 @@ export const MobileAppUI = () => {
             className="flex flex-grow items-center justify-center p-2 text-gray-500 hover:text-indigo-500"
           >
             <div className="text-center">
-              <span className="block h-8 text-3xl leading-8">
-                <i className="mdi mdi-magnify"></i>
+              <span className="block h-8 text-xl leading-8">
+                <img src={Icon4} alt="" className="w-8" />
               </span>
-              <span className="block text-xs leading-none">Search</span>
             </div>
           </a>
         </div>

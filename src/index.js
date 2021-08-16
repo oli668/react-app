@@ -7,7 +7,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
 ReactDOM.render(
   <>
     <Provider store={store}>

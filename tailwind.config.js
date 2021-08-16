@@ -11,7 +11,7 @@ module.exports = {
       2: "2 2 0%",
     },
     fontFamily: {
-      main_theme: ["cursive"],
+      main_theme: ["PingFangSC-Regular, sans-serif;"],
     },
     minWidth: {
       card_md: "140px",
@@ -50,10 +50,12 @@ module.exports = {
       blue: {
         light: "#e4e3dd",
         DEFAULT: "#f6f6f4",
+        dark: "#2F7EF7",
       },
       gray: {
         dark: "#e4e3dd",
         DEFAULT: "#f6f6f4",
+        light: "#E2E6F2",
       },
       testing: {
         dark: "#C0C0C0",
