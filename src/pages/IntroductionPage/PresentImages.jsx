@@ -86,7 +86,11 @@ export const PresentImages = () => {
               <div className="w-full">
                 <div className="w-full md:mx-10 relative">
                   <div className="flex justify-center">
-                    <img src={project} className="z-10" alt=""></img>
+                    <img
+                      src={project}
+                      className="z-10 w-9/12 md:w-full"
+                      alt=""
+                    ></img>
                   </div>
 
                   <div className="absolute top-3/4 mt-10">
@@ -107,9 +111,10 @@ export const PresentImages = () => {
           </div>
         </div>
         <Divider size="large"></Divider>
+        <Divider className="hidden md:block"></Divider>
         <div className="w-full flex flex-col justify-center -mt-20 md:mt-40">
           <div className="flex justify-center">
-            <img className="w-52" src={title} alt=""></img>
+            <img className="w-40 md:w-52" src={title} alt=""></img>
           </div>
           <div className="p-5">
             <ImageSlider images={LARGE_IMAGES} />
@@ -222,7 +227,7 @@ export const PresentImages = () => {
           </Parallax>
         </div>
       </div>
-
+      <Divider size="large"></Divider>
       <ParallaxBanner
         layers={[
           {
