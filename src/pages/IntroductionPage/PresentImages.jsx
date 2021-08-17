@@ -23,7 +23,7 @@ export const PresentImages = () => {
   const LARGE_IMAGES = [
     {
       id: 1,
-      src: designIcon,
+      src: designPoster,
       alt: "Placeholder image",
       title: "板式设计",
       titleEn: "Banner Design",
@@ -37,7 +37,7 @@ export const PresentImages = () => {
     },
     {
       id: 3,
-      src: designPoster,
+      src: designIcon,
       alt: "Placeholder image",
       title: "图标设计",
       titleEn: "Icon Design",
@@ -72,11 +72,11 @@ export const PresentImages = () => {
           </Zoom>
         </div>
       </ParallaxBanner>
-      <div className="flex flex-col justify-between md:mx-20 relative md:pt-12">
-        <div className={"flex flex-col xl:flex-row md:h-full h-large"}>
+      <div className="flex flex-col justify-between md:mx-20 relative pt-28 md:pt-12">
+        <div className={"flex flex-col xl:flex-row"}>
           <div className="flex-1 justify-center hidden xl:block">
             <Fade left>
-              <div className="w-full absolute -top-10 left-20 z-10">
+              <div className="w-full absolute -top-20 left-20 z-10">
                 <MobileAppUI></MobileAppUI>
               </div>
             </Fade>
@@ -88,12 +88,12 @@ export const PresentImages = () => {
                   <div className="flex justify-center">
                     <img
                       src={project}
-                      className="z-10 w-9/12 md:w-full"
+                      className="z-10 hidden md:w-3/4 md:block"
                       alt=""
                     ></img>
                   </div>
 
-                  <div className="absolute top-3/4 mt-10">
+                  <div className="md:absolute relative top-3/4 mt-10">
                     <div className="text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
                       <p className="text-blue-dark font-bold">
                         移动互联网一站式设计与开发
@@ -111,12 +111,14 @@ export const PresentImages = () => {
           </div>
         </div>
         <Divider size="large"></Divider>
-        <Divider className="hidden md:block"></Divider>
-        <div className="w-full flex flex-col justify-center -mt-20 md:mt-40">
-          <div className="flex justify-center">
-            <img className="w-40 md:w-52" src={title} alt=""></img>
+        <div className="w-full flex flex-col justify-center md:mt-40">
+          <div className="flex justify-center md:p-0 pt-5">
+            <img className="hidden md:w-52 md:flex" src={title} alt=""></img>
+            <div className="md:hidden text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
+              <p className="text-blue-dark font-bold">设计展示</p>
+            </div>
           </div>
-          <div className="p-5">
+          <div className="md:pt-5 md:pb-5 pt-0">
             <ImageSlider images={LARGE_IMAGES} />
           </div>
         </div>
@@ -162,7 +164,6 @@ export const PresentImages = () => {
           </Parallax>
         </div>
       </div>
-
       <div className="flex justify-center relative">
         <Zoom clear>
           <div className="w-full md:w-9/12 flex justify-center z-10">
