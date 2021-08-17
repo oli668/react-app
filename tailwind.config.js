@@ -37,6 +37,9 @@ module.exports = {
           "100%": { width: "20rem" },
         },
       },
+      height: {
+        large: "46rem",
+      },
     },
     boxShadow: {
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
