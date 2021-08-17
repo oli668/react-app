@@ -17,6 +17,7 @@ import { Parallax } from "react-scroll-parallax";
 import ImageSlider from "./ImageSlider";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
+import { Divider } from "components/Divider/Divider";
 export const PresentImages = () => {
   useParallaxCache();
   const LARGE_IMAGES = [
@@ -60,7 +61,7 @@ export const PresentImages = () => {
           },
         ]}
         style={{
-          height: "400px",
+          height: "350px",
         }}
       >
         <div className="flex justify-center items-center">
@@ -105,6 +106,7 @@ export const PresentImages = () => {
             </Zoom>
           </div>
         </div>
+        <Divider size="large"></Divider>
         <div className="w-full flex flex-col justify-center -mt-20 md:mt-40">
           <div className="flex justify-center">
             <img className="w-52" src={title} alt=""></img>
@@ -113,6 +115,7 @@ export const PresentImages = () => {
             <ImageSlider images={LARGE_IMAGES} />
           </div>
         </div>
+        <Divider size="large"></Divider>
         <div className="absolute right-0 top-10 hidden whitespace-nowrap md:block">
           <Parallax
             className="custom-class"
@@ -240,7 +243,6 @@ export const PresentImages = () => {
           </Zoom>
         </div>
       </ParallaxBanner>
-
       <div className="flex-1 flex">
         <Zoom clear>
           <div className="w-full">
