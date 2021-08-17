@@ -49,6 +49,7 @@ export const PresentImages = () => {
       titleEn: "3Ds Max",
     },
   ];
+
   return (
     <>
       <ParallaxBanner
@@ -71,7 +72,7 @@ export const PresentImages = () => {
         </div>
       </ParallaxBanner>
       <div className="flex flex-col justify-between md:mx-20 relative md:pt-12">
-        <div className="flex flex-col xl:flex-row h-screen md:h-full">
+        <div className={"flex flex-col xl:flex-row md:h-full h-large"}>
           <div className="flex-1 justify-center hidden xl:block">
             <Fade left>
               <div className="w-full absolute -top-10 left-20 z-10">
@@ -79,7 +80,7 @@ export const PresentImages = () => {
               </div>
             </Fade>
           </div>
-          <div className="flex-1 flex">
+          <div className="flex-1 flex z-10">
             <Zoom clear>
               <div className="w-full">
                 <div className="w-full md:mx-10 relative">
@@ -243,7 +244,7 @@ export const PresentImages = () => {
       <div className="flex-1 flex">
         <Zoom clear>
           <div className="w-full">
-            <div className="w-full md:mx-10 relative">
+            <div className="w-full relative">
               <div className="flex justify-center">
                 <img src={project} className="z-10" alt=""></img>
               </div>
