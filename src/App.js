@@ -51,12 +51,12 @@ const App = () => {
         ></NavBar> */}
         <NavBar isSidemenu navItems={IntroductionPageNavItems}></NavBar>
         {isUserLogin && isLogin ? <Register></Register> : ""}
-        {!showProject && (
+        {showProject && (
           <div className="font-main_theme">
             <IntroductionPage></IntroductionPage>
           </div>
         )}
-        {showProject && (
+        {!showProject && (
           <>
             <div className="fixed z-40 w-full">
               <Header />

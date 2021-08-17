@@ -70,7 +70,7 @@ export const PresentImages = () => {
           </Zoom>
         </div>
       </ParallaxBanner>
-      <div className="flex flex-col justify-between md:mx-20 relative pt-12">
+      <div className="flex flex-col justify-between md:mx-20 relative md:pt-12">
         <div className="flex flex-col xl:flex-row h-screen md:h-full">
           <div className="flex-1 justify-center hidden xl:block">
             <Fade left>
@@ -112,40 +112,40 @@ export const PresentImages = () => {
             <ImageSlider images={LARGE_IMAGES} />
           </div>
         </div>
-        <div className="absolute -right-52 top-10 hidden md:block">
+        <div className="absolute right-0 top-10 hidden whitespace-nowrap md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[-20, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
             <img className="w-64 z-0" src={animationIcon} alt="" />
           </Parallax>
         </div>
-        <div className="absolute left-1/3 top-28 hidden md:block">
+        <div className="absolute left-1/3 top-28 whitespace-nowrap hidden md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[-20, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
             <img className="w-64 z-0" src={animationIconSmall} alt="" />
           </Parallax>
         </div>
-        <div className="absolute left-0 bottom-1/2 hidden md:block">
+        <div className="absolute left-0 bottom-1/2 whitespace-nowrap hidden md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[0, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
             <img className="w-64 z-0" src={animationIcon} alt="" />
           </Parallax>
         </div>
-        <div className="absolute -right-52 bottom-40 hidden md:block">
+        <div className="absolute right-0 bottom-40 whitespace-nowrap hidden md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[0, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
@@ -156,17 +156,17 @@ export const PresentImages = () => {
 
       <div className="flex justify-center relative">
         <Zoom clear>
-          <div className="w-9/12 flex justify-center z-10">
+          <div className="w-full md:w-9/12 flex justify-center z-10">
             <div className="w-full">
               <div className="w-full md:mx-10 relative flex">
                 <div className="flex-1">
-                  <div className="left-0 mt-10 flex-1 absolute z-10 w-2/3 top-10">
+                  <div className="left-0 mb-12 md:mt-10 flex-1 md:absolute relative z-10 w-full md:w-2/3 top-10">
                     <div className="text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
                       <p className="text-blue-dark font-bold">
                         企业网站SEO优化解决方案
                       </p>
                     </div>
-                    <p className="text-lg px-11 w-11/12">
+                    <p className="text-lg px-11 w-full md:w-11/12">
                       SEO(Search Engine Optimization)
                       在企业开拓国际市场、维护客户关系等跨境电商活动中有着不可低估的作用。可通过SEO对企业网站进行内外部优化,
                       使其最大程度地符合搜索引擎的搜索规则,
@@ -175,7 +175,7 @@ export const PresentImages = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex-1 h-full relative flex mx-10">
+                <div className="flex-1 h-full relative hidden mx-10 md:flex">
                   <div className="flex justify-center p-12">
                     <div className="h-full flex">
                       <div className="bg-gray-light w-56 h-1/2 mt-10"></div>
@@ -187,30 +187,30 @@ export const PresentImages = () => {
             </div>
           </div>
         </Zoom>
-        <div className="absolute -right-52 top-10 hidden md:block">
+        <div className="absolute right-0 top-10 hidden whitespace-nowrap md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[-20, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
             <img className="w-64 z-0" src={animationIcon} alt="" />
           </Parallax>
         </div>
-        <div className="absolute left-1/3 top-28 hidden md:block">
+        <div className="absolute left-1/3 top-28 hidden whitespace-nowrap md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[0, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
             <img className="w-64 z-0" src={animationIconSmall} alt="" />
           </Parallax>
         </div>
-        <div className="absolute left-0 bottom-1/2 hidden md:block">
+        <div className="absolute left-0 bottom-1/2 hidden whitespace-nowrap md:block">
           <Parallax
             className="custom-class"
-            x={[-20, 30]}
+            x={[0, 0]}
             y={[0, -30]}
             tagOuter="figure"
           >
