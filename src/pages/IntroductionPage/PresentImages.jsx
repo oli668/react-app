@@ -2,6 +2,7 @@ import React from "react";
 import { useParallaxCache } from "hooks/useParallaxCache";
 import h1 from "images/h1.png";
 import h2 from "images/h2.jpg";
+import commercial from "images/commercial.png";
 import animationIcon from "images/animationIcon.png";
 import animationIconSmall from "images/animationIconSmall.png";
 import inspiration from "images/inspiration.png";
@@ -23,7 +24,7 @@ export const PresentImages = () => {
   const LARGE_IMAGES = [
     {
       id: 1,
-      src: designIcon,
+      src: designPoster,
       alt: "Placeholder image",
       title: "板式设计",
       titleEn: "Banner Design",
@@ -37,7 +38,7 @@ export const PresentImages = () => {
     },
     {
       id: 3,
-      src: designPoster,
+      src: designIcon,
       alt: "Placeholder image",
       title: "图标设计",
       titleEn: "Icon Design",
@@ -72,11 +73,11 @@ export const PresentImages = () => {
           </Zoom>
         </div>
       </ParallaxBanner>
-      <div className="flex flex-col justify-between md:mx-20 relative md:pt-12">
-        <div className={"flex flex-col xl:flex-row md:h-full h-large"}>
+      <div className="flex flex-col justify-between md:mx-20 relative pt-28 md:pt-12">
+        <div className={"flex flex-col xl:flex-row"}>
           <div className="flex-1 justify-center hidden xl:block">
             <Fade left>
-              <div className="w-full absolute -top-10 left-20 z-10">
+              <div className="w-full absolute -top-20 left-20 z-10">
                 <MobileAppUI></MobileAppUI>
               </div>
             </Fade>
@@ -86,10 +87,14 @@ export const PresentImages = () => {
               <div className="w-full">
                 <div className="w-full md:mx-10 relative">
                   <div className="flex justify-center">
-                    <img src={project} className="z-10" alt=""></img>
+                    <img
+                      src={project}
+                      className="z-10 hidden md:w-3/4 md:block"
+                      alt=""
+                    ></img>
                   </div>
 
-                  <div className="absolute top-3/4 mt-10">
+                  <div className="md:absolute relative top-3/4 mt-10">
                     <div className="text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
                       <p className="text-blue-dark font-bold">
                         移动互联网一站式设计与开发
@@ -107,16 +112,19 @@ export const PresentImages = () => {
           </div>
         </div>
         <Divider size="large"></Divider>
-        <div className="w-full flex flex-col justify-center -mt-20 md:mt-40">
-          <div className="flex justify-center">
-            <img className="w-52" src={title} alt=""></img>
+        <div className="w-full flex flex-col justify-center md:mt-40 z-10">
+          <div className="flex justify-center md:p-0 pt-5">
+            <img className="hidden md:w-52 md:flex" src={title} alt=""></img>
+            <div className="md:hidden text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
+              <p className="text-blue-dark font-bold">设计展示</p>
+            </div>
           </div>
-          <div className="p-5">
+          <div className="md:pt-5 md:pb-5 pt-0">
             <ImageSlider images={LARGE_IMAGES} />
           </div>
         </div>
         <Divider size="large"></Divider>
-        <div className="absolute right-0 top-10 hidden whitespace-nowrap md:block">
+        <div className="absolute -right-20 top-10 hidden whitespace-nowrap md:block">
           <Parallax
             className="custom-class"
             x={[-20, 0]}
@@ -136,7 +144,7 @@ export const PresentImages = () => {
             <img className="w-64 z-0" src={animationIconSmall} alt="" />
           </Parallax>
         </div>
-        <div className="absolute left-0 bottom-1/2 whitespace-nowrap hidden md:block">
+        <div className="absolute left-0 bottom-1/3 whitespace-nowrap hidden md:block">
           <Parallax
             className="custom-class"
             x={[0, 0]}
@@ -146,7 +154,7 @@ export const PresentImages = () => {
             <img className="w-64 z-0" src={animationIcon} alt="" />
           </Parallax>
         </div>
-        <div className="absolute right-0 bottom-40 whitespace-nowrap hidden md:block">
+        <div className="absolute -right-20 bottom-40 whitespace-nowrap hidden md:block">
           <Parallax
             className="custom-class"
             x={[0, 0]}
@@ -157,7 +165,6 @@ export const PresentImages = () => {
           </Parallax>
         </div>
       </div>
-
       <div className="flex justify-center relative">
         <Zoom clear>
           <div className="w-full md:w-9/12 flex justify-center z-10">
@@ -222,7 +229,32 @@ export const PresentImages = () => {
           </Parallax>
         </div>
       </div>
+      <div className="flex z-10">
+        <Zoom clear>
+          <div className="w-full flex md:flex-row flex-col relative">
+            <div className="flex-1 flex justify-center">
+              <img
+                src={commercial}
+                className="z-10 md:w-3/4 md:ml-40 ml-0 md:p-0 py-28 px-5"
+                alt=""
+              ></img>
+            </div>
 
+            <div className="flex-1 flex justify-center items-center flex-col">
+              <div className="text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
+                <p className="text-blue-dark font-bold">
+                  电商产品展示设计方案提供与解决
+                </p>
+              </div>
+              <p className="text-lg px-11">
+                电商网站的优势在于将传统的商务流程电子化、数字化。本公司可以为客户提供网站总体设计以及电商产品展示设计，产品展示设计会辅以图片、相关视频等,
+                并且用英文对该产品的基本性能进行阐述。
+              </p>
+            </div>
+          </div>
+        </Zoom>
+      </div>
+      <Divider size="large"></Divider>
       <ParallaxBanner
         layers={[
           {
