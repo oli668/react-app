@@ -7,6 +7,7 @@ import { Carousel } from "./Carousel";
 import { PresentImages } from "./PresentImages";
 import background from "images/background.png";
 import { Gradient } from "shared/Gradient";
+import logo from "images/logo.png";
 
 export const IntroductionPage = () => {
   var gradient = new Gradient();
@@ -17,23 +18,11 @@ export const IntroductionPage = () => {
       <div className="w-full flex justify-center relative h-96">
         <div className="flex absolute w-full xl:w-3/4 z-40 my-10 container px-5">
           <div className="my-auto flex relative cursor-pointer flex-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 text-white text-2xl"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span className="text-black w-full font-bold text-lg absolute px-10 sm:text-2xl">
-              咕噜铁汁科技
-            </span>
+            <img
+              src={logo}
+              className="w-20 md:w-24 absolute md:-top-11 -top-5"
+              alt=""
+            ></img>
           </div>
           <div className="w-full flex-2 md:flex flex-row-reverse hidden z-50">
             <NavBar

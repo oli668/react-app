@@ -71,7 +71,7 @@ export const NavBar = ({
                   <div
                     onMouseEnter={() => showDropdownList(item.id)}
                     ref={navRef}
-                    className={`absolute flex left-0 bg-black-light w-full flex-row z-50`}
+                    className={`absolute flex left-0 bg-blue-light w-full flex-row z-50`}
                   >
                     <div className="container w-2/3 flex mx-auto px-4 md;px-10 xl:px-10 2xl:px-0 bg-clip-content flex-wrap">
                       {dropdownMenuList &&
