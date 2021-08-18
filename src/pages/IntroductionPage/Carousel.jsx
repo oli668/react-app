@@ -5,7 +5,6 @@ import slickImg2 from "images/2.png";
 import slickImg3 from "images/3.png";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import { Divider } from "components/Divider/Divider";
 export const Carousel = () => {
   const [activeSlideIndex, setActiveState] = useState(0);
   const settings = {
