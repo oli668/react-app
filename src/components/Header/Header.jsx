@@ -22,7 +22,7 @@ export const Header = () => {
   });
   const { items } = useSelector((store) => store.shoppingCart);
   return (
-    <div className="bg-black-light relative">
+    <div className="bg-blue-light relative">
       <div className="container w-full md:w-2/3 my-0 mx-auto px-2 2xl:px-0 bg-clip-content">
         <div className="px-2 md:px-0 flex-shrink-0 flex justify-between x-2 pt-3">
           <div className="md:m-0 my-0 flex-shrink-0 flex items-center x-2 px-1 w-full">

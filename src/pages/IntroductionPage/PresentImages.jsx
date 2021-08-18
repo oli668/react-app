@@ -278,7 +278,7 @@ export const PresentImages = () => {
       <Divider size="large"></Divider>
       <Zoom clear>
         <div className="flex justify-center">
-          <div className="flex justify-center w-10/12">
+          <div className="flex justify-center md:w-10/12 w-full flex-col md:flex-row">
             <div className="flex-1 justify-center flex flex-col">
               <div className="text-3xl flex px-11 py-3">
                 <p className="text-blue-dark font-bold">走进咕噜铁汁大家庭</p>
@@ -309,21 +309,25 @@ export const PresentImages = () => {
               </p>
             </div>
             <div className="text-3xl px-11 py-3 flex-1 flex flex-col">
-              <p className="text-blue-dark font-bold text-center">联系我们</p>
+              <p className="text-blue-dark font-bold md:text-center text-left md:pt-0 pt-24">
+                联系我们
+              </p>
               <div className="text-lg py-3 flex">
-                <p className="font-bold pl-11 py-3">合作电话:</p>
+                <p className="font-bold md:pl-11 py-3 pl-0">合作电话:</p>
                 <p className="text-black-light pl-3 py-3">18164810993</p>
               </div>
               <div className="text-lg py-3 flex">
-                <p className="font-bold pl-11 py-3">招聘邮箱:</p>
-                <p className="text-black-light pl-3 py-3">gulubro.hr@163.com</p>
+                <p className="font-bold md:pl-11 py-3 pl-0">招聘邮箱:</p>
+                <p className="text-black-light pl-3 py-3">gulubro_hr@163.com</p>
               </div>
               <div className="text-lg py-3 flex">
-                <p className="font-bold pl-11 py-3">官方邮箱:</p>
-                <p className="text-black-light pl-3 py-3">gulubro@163.com</p>
+                <p className="font-bold md:pl-11 py-3 pl-0">官方邮箱:</p>
+                <p className="text-black-light pl-3 py-3">
+                  gulubro_tech@163.com
+                </p>
               </div>
               <div className="text-lg py-3 flex">
-                <p className="font-bold pl-11 py-3">公司地址:</p>
+                <p className="font-bold md:pl-11 py-3 pl-0">公司地址:</p>
                 <p className="text-black-light pl-3 py-3">
                   浙江省杭州市西湖区学院路222-1号二层219室
                 </p>
