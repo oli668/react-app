@@ -275,30 +275,64 @@ export const PresentImages = () => {
           </Zoom>
         </div>
       </ParallaxBanner>
-      <div className="flex-1 flex">
-        <Zoom clear>
-          <div className="w-full">
-            <div className="w-full relative">
-              <div className="flex justify-center">
-                <img src={project} className="z-10" alt=""></img>
+      <Divider size="large"></Divider>
+      <Zoom clear>
+        <div className="flex justify-center">
+          <div className="flex justify-center w-10/12">
+            <div className="flex-1 justify-center flex flex-col">
+              <div className="text-3xl flex px-11 py-3">
+                <p className="text-blue-dark font-bold">走进咕噜铁汁大家庭</p>
               </div>
-
-              <div className="absolute top-3/4 mt-10">
-                <div className="text-2xl py-2 left-1/2 -translate-x-1/2 flex justify-center">
-                  <p className="text-blue-dark font-bold">
-                    移动互联网一站式设计与开发
-                  </p>
-                </div>
-                <p className="text-lg px-11">
-                  移动互联网一站式服务平台是满足海量客户所有需求的“一站式服务”平台，即根据客户的需求及要求，提供简单易用的互联网营销产品与优质服务。
-                  主要包括技术咨询、产品设计、项目开发和售后运维服务等。主要业务包含定制app开发、支持iOS/安卓双系统、支持商家端/客户端的双端开发、
-                  App+PC+web+微信四合一全网开发
+              <div className="text-lg py-2 flex">
+                <p className="font-bold px-11 py-3">1.以员工为中心</p>
+              </div>
+              <p className="text-lg px-11 text-black-light">
+                以员工的利益为出发点，为员工创设建立周期性沟通机制
+              </p>
+              <div className="text-lg flex">
+                <p className="font-bold px-11 py-3">2.企业氛围良好</p>
+              </div>
+              <p className="text-lg px-11 text-black-light">
+                员工之间沟通坦诚，相处氛围轻松愉快，工作环境舒适
+              </p>
+              <div className="text-lg flex px-11">
+                <p className="font-bold py-3">3.工作时间自由</p>
+              </div>
+              <p className="text-lg px-11 text-black-light">
+                弹性工作且制度灵活，可自主选择工作的具体时间安排
+              </p>
+              <div className="text-lg flex px-11">
+                <p className="font-bold py-3">4.培训活动丰富</p>
+              </div>
+              <p className="text-lg px-11 text-black-light">
+                建立培训交流平台，打造精通物联网和智能技术的人才
+              </p>
+            </div>
+            <div className="text-3xl px-11 py-3 flex-1 flex flex-col">
+              <p className="text-blue-dark font-bold text-center">联系我们</p>
+              <div className="text-lg py-3 flex">
+                <p className="font-bold pl-11 py-3">合作电话:</p>
+                <p className="text-black-light pl-3 py-3">18164810993</p>
+              </div>
+              <div className="text-lg py-3 flex">
+                <p className="font-bold pl-11 py-3">招聘邮箱:</p>
+                <p className="text-black-light pl-3 py-3">gulubro.hr@163.com</p>
+              </div>
+              <div className="text-lg py-3 flex">
+                <p className="font-bold pl-11 py-3">官方邮箱:</p>
+                <p className="text-black-light pl-3 py-3">gulubro@163.com</p>
+              </div>
+              <div className="text-lg py-3 flex">
+                <p className="font-bold pl-11 py-3">公司地址:</p>
+                <p className="text-black-light pl-3 py-3">
+                  浙江省杭州市西湖区学院路222-1号二层219室
                 </p>
               </div>
             </div>
           </div>
-        </Zoom>
-      </div>
+        </div>
+      </Zoom>
+      <Divider size="large"></Divider>
     </>
   );
 };
