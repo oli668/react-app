@@ -88,9 +88,12 @@ export const IntroductionPage = () => {
             </ul>
             <div className="flex mx-auto text-white text-center flex-col md:flex-row">
               <p>咕噜铁汁科技（杭州）有限公司 ©2021</p>
-              <p>
+              <a
+                className="cursor-pointer hover:underline"
+                href="https://beian.miit.gov.cn/"
+              >
                 <span className="px-4">浙ICP备2021023461 工信部ICP备案</span>
-              </p>
+              </a>
             </div>
           </div>
         </footer>
