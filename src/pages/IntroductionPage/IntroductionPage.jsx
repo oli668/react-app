@@ -92,7 +92,9 @@ export const IntroductionPage = () => {
                 className="cursor-pointer hover:underline"
                 href="https://beian.miit.gov.cn/"
               >
-                <span className="px-4">浙ICP备2021023461 工信部ICP备案</span>
+                <span className="px-4">
+                  浙ICP备2021023461号-1 工信部ICP备案
+                </span>
               </a>
             </div>
           </div>
