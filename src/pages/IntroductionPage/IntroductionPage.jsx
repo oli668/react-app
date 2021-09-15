@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import { NavBar } from "components/Header/NavBar";
 import { IntroductionPageNavItems } from "components/Header/data";
 import { MacbookPro } from "components/WithoutTailwind/Macbook";
@@ -8,10 +8,48 @@ import { PresentImages } from "./PresentImages";
 import background from "images/background.png";
 import { Gradient } from "shared/Gradient";
 import logo from "images/logo.png";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleCocktailsPage } from "store/actions/header";
+const ifHasAnchorJustScorll = () => {
+  let anchor = getURLStuff("anchor");
+  if (!!anchor) {
+    let anchorElement = document.getElementById(anchor);
+    if (anchorElement) {
+      window.scrollTo(0, anchorElement.offsetTop - window.innerHeight / 2);
+    }
+  }
+  // 没有的话，滚动到头部
+  else {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+};
+const getURLStuff = (stuff) => {
+  let url = window.location.hash;
+  let query = url.split("?").length > 1 ? url.split("?")[1] : "";
+  let param = !!query ? query.split("&") : [];
+  let resultSet = {};
+  for (let i = 0; i < param.length; i++) {
+    let params = param[i].split("=");
+    if (params.length > 1) {
+      resultSet[params[0]] = params[1];
+    }
+  }
+  let result = resultSet[stuff] || "";
+  return decodeURI(result);
+};
 
 export const IntroductionPage = () => {
   var gradient = new Gradient();
   gradient.initGradient("#gradient-canvas");
+  const dispatch = useDispatch();
+  const params = useLocation();
+  useEffect(() => {
+    if (params.pathname === "/cocktails") {
+      dispatch(toggleCocktailsPage());
+    }
+    ifHasAnchorJustScorll();
+  });
 
   return (
     <>

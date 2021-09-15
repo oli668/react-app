@@ -36,7 +36,7 @@ export const NavBar = ({
           <button
             className="text-black focus:outline-none hover:px-2 py-2 text-xl font-bold"
             onClick={() => {
-              history.push("/");
+              history.push("/cocktails");
             }}
           >
             <span className="px-2 py-2 center">

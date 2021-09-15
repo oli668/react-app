@@ -18,3 +18,8 @@ export const setLanguage = (payload) => {
     payload: payload,
   };
 };
+
+export const TOGGLE_COCKTAILS_PAGE = "TOGGLE_COCKTAILS_PAGE";
+export const toggleCocktailsPage = () => ({
+  type: TOGGLE_COCKTAILS_PAGE,
+});
