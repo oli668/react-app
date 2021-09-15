@@ -212,6 +212,12 @@ export const IntroductionPageNavItems = [
     isSubmenu: true,
   },
   {
+    id: "cocktails",
+    content: { ch: "我们的产品", us: "Our Products" },
+    name: "cocktails",
+    isSubmenu: true,
+  },
+  {
     id: "join",
     content: { ch: "加入我们", us: "Join us" },
     name: "join",

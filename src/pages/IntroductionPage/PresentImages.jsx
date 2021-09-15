@@ -55,6 +55,7 @@ export const PresentImages = () => {
   return (
     <>
       <ParallaxBanner
+        id="missions"
         layers={[
           {
             image: h1,
@@ -256,6 +257,7 @@ export const PresentImages = () => {
       </div>
       <Divider size="large"></Divider>
       <ParallaxBanner
+        id="join"
         layers={[
           {
             image: h2,

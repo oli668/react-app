@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import {
   toggleSidemenu,
   toggleShoppingCartMenu,
   toggleLoginModal,
+  toggleCocktailsPage,
 } from "store/actions/header";
 import { NavBar } from "./NavBar";
 import { navItems, dropdownMenuList, subMenuMap } from "./data";
@@ -13,10 +15,12 @@ import { SideMenu } from "components/ShoppingCart/SideMenu";
 import { setLanguage } from "store/actions/header";
 import us from "images/us.png";
 import ch from "images/ch.png";
+import logo from "images/logo.png";
 export const Header = () => {
   const dispatch = useDispatch();
   const [selectedLanguage, setSelectedLanguage] = useState(false);
   const [isShowSearch, setIsShowSearch] = useState(false);
+  const history = useHistory();
   const { isShowSidemenu } = useSelector((store) => {
     return store.header;
   });
@@ -28,13 +32,26 @@ export const Header = () => {
           <div className="md:m-0 my-0 flex-shrink-0 flex items-center x-2 px-1 w-full">
             <div className="flex items-start w-full">
               <div className="container w-full hidden md:block">
-                <NavBar
-                  isSidemenu={false}
-                  navItems={navItems}
-                  subMenuMap={subMenuMap}
-                  dropdownMenuList={dropdownMenuList}
-                  className="flex flex-row absolut"
-                ></NavBar>
+                <div className="flex">
+                  <img
+                    src={logo}
+                    className="w-10 cursor-pointer"
+                    alt=""
+                    onClick={() => {
+                      history.push("/");
+                      dispatch(toggleCocktailsPage());
+                    }}
+                  ></img>
+                  <div className="mx-2">
+                    <NavBar
+                      isSidemenu={false}
+                      navItems={navItems}
+                      subMenuMap={subMenuMap}
+                      dropdownMenuList={dropdownMenuList}
+                      className="flex flex-row absolut"
+                    ></NavBar>
+                  </div>
+                </div>
               </div>
               <div className="flex w-full justify-left md:hidden">
                 <button
