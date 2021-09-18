@@ -19,7 +19,12 @@ export const setLanguage = (payload) => {
   };
 };
 
-export const TOGGLE_COCKTAILS_PAGE = "TOGGLE_COCKTAILS_PAGE";
-export const toggleCocktailsPage = () => ({
-  type: TOGGLE_COCKTAILS_PAGE,
+export const SHOW_COCKTAILS_PAGE = "SHOW_COCKTAILS_PAGE";
+export const showCocktailsPage = () => ({
+  type: SHOW_COCKTAILS_PAGE,
+});
+
+export const HIDE_COCKTAILS_PAGE = "HIDE_COCKTAILS_PAGE";
+export const hideCocktailsPage = () => ({
+  type: HIDE_COCKTAILS_PAGE,
 });

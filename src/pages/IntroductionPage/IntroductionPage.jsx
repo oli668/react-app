@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { NavBar } from "components/Header/NavBar";
 import { IntroductionPageNavItems } from "components/Header/data";
 import { MacbookPro } from "components/WithoutTailwind/Macbook";
@@ -9,9 +8,8 @@ import { PresentImages } from "./PresentImages";
 import background from "images/background.png";
 import { Gradient } from "shared/Gradient";
 import logo from "images/logo.png";
-import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toggleCocktailsPage } from "store/actions/header";
+import { hideCocktailsPage } from "store/actions/header";
 // const ifHasAnchorJustScorll = () => {
 //   let anchor = getURLStuff("anchor");
 //   if (!!anchor) {
@@ -42,17 +40,13 @@ import { toggleCocktailsPage } from "store/actions/header";
 
 export const IntroductionPage = () => {
   const gradient = new Gradient();
-  const history = useHistory();
   useEffect(() => {
     gradient.initGradient("#gradient-canvas");
   });
   const dispatch = useDispatch();
-  const params = useLocation();
   useEffect(() => {
-    if (params.pathname === "/cocktails") {
-      dispatch(toggleCocktailsPage());
-    }
-  });
+    dispatch(hideCocktailsPage());
+  }, []);
 
   return (
     <>
@@ -116,40 +110,6 @@ export const IntroductionPage = () => {
       </div>
       <Carousel></Carousel>
       <PresentImages></PresentImages>
-      <div className="bg-blue-dark">
-        <footer className="flex flex-wrap items-center justify-between p-3 m-auto">
-          <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
-            <ul className="flex mx-auto text-white text-center">
-              <li className="p-2 cursor-pointer hover:underline">
-                用户服务协议
-              </li>
-              <li className="p-2 cursor-pointer hover:underline">隐私政策</li>
-              <li className="p-2 cursor-pointer hover:underline">联系我们</li>
-              <li
-                className="p-2 cursor-pointer hover:underline"
-                onClick={() => {
-                  dispatch(toggleCocktailsPage());
-                  history.push("/cocktails");
-                }}
-              >
-                我们的产品
-              </li>
-              <li className="p-2 cursor-pointer hover:underline">加入我们</li>
-            </ul>
-            <div className="flex mx-auto text-white text-center flex-col md:flex-row">
-              <p>咕噜铁汁科技（杭州）有限公司 ©2021</p>
-              <a
-                className="cursor-pointer hover:underline"
-                href="https://beian.miit.gov.cn/"
-              >
-                <span className="px-4">
-                  浙ICP备2021023461号-1 工信部ICP备案
-                </span>
-              </a>
-            </div>
-          </div>
-        </footer>
-      </div>
     </>
   );
 };

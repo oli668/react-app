@@ -198,6 +198,19 @@ export const dropdownMenuList = {
   tools: {},
 };
 
+export const homePageSideMenuList = {
+  about: {},
+  do: {},
+  cocktails: {},
+  join: {},
+};
+
+export const homePageMenuMap = {
+  liqours: { us: "Base", ch: "基酒" },
+  tastes: { us: "Taste", ch: "味道" },
+  categories: { us: "Make", ch: "调配方式" },
+};
+
 export const IntroductionPageNavItems = [
   {
     id: "about",
