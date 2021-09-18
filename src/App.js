@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo, useEffect, useState } from "react";
 import "./App.css";
 import HomePage from "./pages/HomePage/home";
