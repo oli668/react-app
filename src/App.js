@@ -50,30 +50,46 @@ const App = () => {
         messages={flatLanguagues}
         textComponent={React.Fragment}
       >
-        <NavBar
-          isSidemenu
-          navItems={navItems}
-          dropdownMenuList={dropdownMenuList}
-          subMenuMap={subMenuMap}
-        ></NavBar>
-        <NavBar isSidemenu navItems={IntroductionPageNavItems}></NavBar>
-        {isUserLogin && isLogin ? <Register></Register> : ""}
-        {!isShowCocktails && (
-          <div className="font-main_theme">
-            <IntroductionPage></IntroductionPage>
-          </div>
-        )}
         {isShowCocktails && (
+          <NavBar
+            isSidemenu
+            navItems={navItems}
+            dropdownMenuList={dropdownMenuList}
+            subMenuMap={subMenuMap}
+          ></NavBar>
+        )}
+        {!isShowCocktails && (
+          <NavBar isSidemenu navItems={IntroductionPageNavItems}></NavBar>
+        )}
+        {isUserLogin && isLogin ? <Register></Register> : ""}
+        {
           <>
-            <div className="fixed z-40 w-full">
-              <Header />
-            </div>
-            <Divider></Divider>
+            {isShowCocktails && (
+              <div>
+                <div className="fixed z-40 w-full">
+                  <Header />
+                </div>
+                <Divider></Divider>
+              </div>
+            )}
             <div
-              className={`App container mx-auto px-4 md:px-10 xl:px-16 2xl:px-16 bg-clip-content min-h-screen`}
+              className={`${
+                isShowCocktails
+                  ? "App container mx-auto px-4 md:px-10 xl:px-16 2xl:px-16 bg-clip-content min-h-screen"
+                  : ""
+              }`}
             >
-              <Divider size="sm" />
+              {isShowCocktails && <Divider size="sm" />}
               <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => (
+                    <div className="font-main_theme">
+                      <IntroductionPage></IntroductionPage>
+                    </div>
+                  )}
+                ></Route>
                 <Route
                   exact
                   path={ROUTES.HOME}
@@ -99,7 +115,7 @@ const App = () => {
               </Switch>
             </div>
           </>
-        )}
+        }
       </IntlProvider>
     </BrowserRouter>
   );
