@@ -6,7 +6,6 @@ import {
   toggleSidemenu,
   toggleShoppingCartMenu,
   toggleLoginModal,
-  toggleCocktailsPage,
 } from "store/actions/header";
 import { NavBar } from "./NavBar";
 import { navItems, dropdownMenuList, subMenuMap } from "./data";
@@ -24,9 +23,10 @@ export const Header = () => {
   const { isShowSidemenu } = useSelector((store) => {
     return store.header;
   });
+
   const { items } = useSelector((store) => store.shoppingCart);
   return (
-    <div className="bg-blue-light relative">
+    <div className="bg-blue-dark relative">
       <div className="container w-full md:w-2/3 my-0 mx-auto px-2 2xl:px-0 bg-clip-content">
         <div className="px-2 md:px-0 flex-shrink-0 flex justify-between x-2 pt-3">
           <div className="md:m-0 my-0 flex-shrink-0 flex items-center x-2 px-1 w-full">
@@ -35,11 +35,11 @@ export const Header = () => {
                 <div className="flex">
                   <img
                     src={logo}
-                    className="w-10 cursor-pointer"
+                    className="w-10 cursor-pointer mr-2"
+                    style={{ filter: "invert(1)" }}
                     alt=""
                     onClick={() => {
                       history.push("/");
-                      dispatch(toggleCocktailsPage());
                     }}
                   ></img>
                   <div className="mx-2">
@@ -48,7 +48,8 @@ export const Header = () => {
                       navItems={navItems}
                       subMenuMap={subMenuMap}
                       dropdownMenuList={dropdownMenuList}
-                      className="flex flex-row absolut"
+                      textColor="text-white"
+                      className="flex flex-row absolute"
                     ></NavBar>
                   </div>
                 </div>
@@ -66,7 +67,7 @@ export const Header = () => {
                   aria-expanded="false"
                 >
                   <svg
-                    className="block h-6 w-6"
+                    className="block h-6 w-6 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"

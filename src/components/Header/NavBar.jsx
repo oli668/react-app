@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Transition } from "@headlessui/react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleSidemenu, toggleCocktailsPage } from "store/actions/header";
+import { toggleSidemenu } from "store/actions/header";
 import { setFilterCocktailsId } from "store/actions/cocktails";
 import { useClickOutside } from "hooks/useClickOutside";
 import { useIntl } from "react-intl";
@@ -13,6 +13,7 @@ export const NavBar = ({
   navItems,
   dropdownMenuList,
   subMenuMap,
+  textColor,
 }) => {
   const intl = useIntl();
   const navRef = useRef();
@@ -20,6 +21,9 @@ export const NavBar = ({
   const dispatch = useDispatch();
   const [currHoverBtn, showDropdownList] = useState("");
   const language = useSelector((store) => store.header.language).toLowerCase();
+  const isShowCocktails = useSelector(
+    (store) => store.header.isShowCocktailsPage
+  );
 
   useClickOutside(navRef, () => {
     showDropdownList(null);
@@ -35,9 +39,9 @@ export const NavBar = ({
       {!isSidemenu && (
         <div className="hidden space-x-4 md:flex">
           <button
-            className="text-black focus:outline-none hover:px-2 py-2 text-xl font-bold"
+            className={`${textColor} focus:outline-none hover:px-2 py-2 text-xl font-bold`}
             onClick={() => {
-              history.push("/cocktails");
+              isShowCocktails ? history.push("/cocktails") : history.push("/");
             }}
           >
             <span className="px-2 py-2 center">
@@ -49,10 +53,8 @@ export const NavBar = ({
               <div key={id} className="">
                 <button
                   name={item.name}
-                  className="text-black focus:outline-none hover:px-2 py-2 text-xl font-bold"
+                  className={`${textColor} focus:outline-none hover:px-2 hover:text-black-light py-2 text-xl font-bold`}
                   onClick={() => {
-                    item.name === "cocktails" &&
-                      dispatch(toggleCocktailsPage());
                     dropdownMenuList
                       ? showDropdownList(item.id)
                       : history.push(`/${item.id}`);
@@ -74,7 +76,7 @@ export const NavBar = ({
                   <div
                     onMouseEnter={() => showDropdownList(item.id)}
                     ref={navRef}
-                    className={`absolute flex left-0 bg-blue-light w-full flex-row z-50`}
+                    className={`absolute flex left-0 bg-blue-dark w-full flex-row z-50`}
                   >
                     <div className="container w-2/3 flex mx-auto px-4 md;px-10 xl:px-10 2xl:px-0 bg-clip-content flex-wrap">
                       {dropdownMenuList &&
@@ -87,7 +89,7 @@ export const NavBar = ({
                               return (
                                 <div className="px-3 py-3" key={menuKey}>
                                   <div className="flex flex-col">
-                                    <span className="border-black-light text-black border-b-2 font-bold uppercase">
+                                    <span className="border-blue-dark text-white border-b-2 font-bold uppercase">
                                       {subMenuMap && subMenuMap[menu][language]}
                                     </span>
                                     {subMenuMap &&
@@ -113,7 +115,7 @@ export const NavBar = ({
                                             }}
                                           >
                                             <span
-                                              className="border-black-light hover:shadow-lg 
+                                              className="border-blue-dark hover:shadow-lg 
                         text-white hover:text-white border-b-2 hover:border-b-2 hover:border-white font-small"
                                             >
                                               {item.content[language]}
@@ -136,12 +138,12 @@ export const NavBar = ({
       )}
       {
         <div
-          className={`z-50 fixed md:hidden top-0 bottom-0 overflow-y-scroll  ${
+          className={`z-50 fixed md:hidden top-0 bottom-0 overflow-y-auto  ${
             isShowSidemenu ? "animate-sidebarOpen block" : "hidden"
-          }  bg-gray-dark min-h-screen w-72`}
+          }  bg-blue-dark min-h-screen w-72`}
         >
           <button
-            className="w-8 absolute right-2 top-2"
+            className="w-8 absolute right-2 top-2 text-white"
             onClick={() => {
               dispatch(toggleSidemenu());
             }}
@@ -150,20 +152,21 @@ export const NavBar = ({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="black"
+              stroke="white"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
+                stroke="currentColor"
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
           </button>
           <button
-            className="mt-7 ml-10 border-black border-b-2 hover:border-b-2 hover:border-gray text-black focus:outline-none hover:px-2 py-2 text-lg font-medium"
+            className="mt-7 ml-10 border-b-2 hover:border-b-2 hover:border-gray text-white focus:outline-none hover:px-2 py-2 text-lg font-medium"
             onClick={() => {
-              history.push("/cocktails");
+              isShowCocktails ? history.push("/cocktails") : history.push("/");
             }}
           >
             <span className="py-2 center">
@@ -184,7 +187,7 @@ export const NavBar = ({
                       return (
                         <div className="py-3" key={menuKey}>
                           <div className="flex flex-col">
-                            <span className="font-bold uppercase">
+                            <span className="font-bold uppercase text-white">
                               {subMenuMap[menu][language]}
                             </span>
                             {subMenu[menu].map((item, listId) => {
@@ -209,7 +212,7 @@ export const NavBar = ({
                                 >
                                   <span
                                     className="hover:shadow-lg 
-                        text-black-light hover:text-black font-small"
+                        text-white hover:text-black font-small"
                                   >
                                     {item.content[language]}
                                   </span>
@@ -222,6 +225,28 @@ export const NavBar = ({
                     })
                   );
                 })}
+          </div>
+          <div className="ml-10">
+            <div>
+              {navItems.map((item, id) => {
+                return (
+                  <div className="flex flex-row" key={id}>
+                    <div className="my-5">
+                      {
+                        <span
+                          className="text-xl text-white cursor-pointer"
+                          onClick={() => {
+                            history.push(`/${item.id}`);
+                          }}
+                        >
+                          {item.content[language]}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       }

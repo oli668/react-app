@@ -2,32 +2,22 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Card } from "components/Card/Card";
-// import { cardData } from "components/Card/data.js";
 import { useIntl } from "react-intl";
 import { Divider } from "components/Divider/Divider";
 import { SayLove } from "pages/StartPage/StartPage";
-import { tcbFetchCocktailsDetails } from "api/api";
-import { saveCocktailsDetails } from "store/actions/cocktails.js";
 import { decrypt } from "shared/DataUtils.js";
+import { showCocktailsPage } from "store/actions/header";
 
 const HomePage = () => {
   const intl = useIntl();
   const [currentCocktails, setCurrentCocktails] = useState([]);
   const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!cocktailsDetails.length) {
-      tcbFetchCocktailsDetails().then((res) => {
-        dispatch(saveCocktailsDetails(res.result));
-      });
-    }
-  }, []);
-
   useEffect(() => {
     if (cocktailsDetails.length > 0) {
       const data = decrypt(cocktailsDetails);
       setCurrentCocktails(data);
+      dispatch(showCocktailsPage());
     }
   }, [cocktailsDetails.length]);
 
