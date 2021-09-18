@@ -20,9 +20,7 @@ export const NavBar = ({
   const dispatch = useDispatch();
   const [currHoverBtn, showDropdownList] = useState("");
   const language = useSelector((store) => store.header.language).toLowerCase();
-  const isShowCocktails = useSelector(
-    (store) => store.header.isShowCocktailsPage
-  );
+
   useClickOutside(navRef, () => {
     showDropdownList(null);
   });
