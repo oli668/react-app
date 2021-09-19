@@ -15,7 +15,7 @@ export const Footer = ({ footerStyle }) => {
                   history.push("/");
                 }}
               >
-                咕噜铁汁主页
+                主页
               </li>
               <li className="p-2 cursor-pointer hover:underline">
                 用户服务协议
