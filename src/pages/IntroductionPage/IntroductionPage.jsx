@@ -1,47 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { NavBar } from "components/Header/NavBar";
 import { useHistory } from "react-router-dom";
 import { IntroductionPageNavItems } from "components/Header/data";
 import { MacbookPro } from "components/WithoutTailwind/Macbook";
 import { Carousel } from "./Carousel";
+
 import { PresentImages } from "./PresentImages";
 import background from "images/background.png";
 import { Gradient } from "shared/Gradient";
 import logo from "images/logo.png";
 import { useDispatch } from "react-redux";
 import { hideCocktailsPage } from "store/actions/header";
-// const ifHasAnchorJustScorll = () => {
-//   let anchor = getURLStuff("anchor");
-//   if (!!anchor) {
-//     let anchorElement = document.getElementById(anchor);
-//     if (anchorElement) {
-//       window.scrollTo(0, anchorElement.offsetTop - window.innerHeight / 2);
-//     }
-//   }
-//   // 没有的话，滚动到头部
-//   else {
-//     document.body.scrollTop = document.documentElement.scrollTop = 0;
-//   }
-// };
-// const getURLStuff = (stuff) => {
-//   let url = window.location.hash;
-//   let query = url.split("?").length > 1 ? url.split("?")[1] : "";
-//   let param = !!query ? query.split("&") : [];
-//   let resultSet = {};
-//   for (let i = 0; i < param.length; i++) {
-//     let params = param[i].split("=");
-//     if (params.length > 1) {
-//       resultSet[params[0]] = params[1];
-//     }
-//   }
-//   let result = resultSet[stuff] || "";
-//   return decodeURI(result);
-// };
 
 export const IntroductionPage = () => {
   const { location } = useHistory();
+  const scrollRef = useRef();
+  const childRef = useRef();
   const gradient = new Gradient();
   useEffect(() => {
     gradient.initGradient("#gradient-canvas");
@@ -50,7 +26,15 @@ export const IntroductionPage = () => {
   useEffect(() => {
     dispatch(hideCocktailsPage());
   }, []);
-  console.log(location.pathname);
+  console.log(childRef, scrollRef);
+  useEffect(() => {
+    if (location.pathname === "/join") {
+      childRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (location.pathname === "/missions") {
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  });
   return (
     <>
       <div className="w-full flex justify-center relative h-96">
@@ -112,7 +96,8 @@ export const IntroductionPage = () => {
         </div>
       </div>
       <Carousel></Carousel>
-      <PresentImages></PresentImages>
+      <div ref={scrollRef}></div>
+      <PresentImages ref={childRef}></PresentImages>
     </>
   );
 };

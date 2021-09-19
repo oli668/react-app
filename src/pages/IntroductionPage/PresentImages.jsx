@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { useParallaxCache } from "hooks/useParallaxCache";
 import h1 from "images/h1.png";
 import h2 from "images/h2.jpg";
@@ -19,7 +19,8 @@ import ImageSlider from "./ImageSlider";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import { Divider } from "components/Divider/Divider";
-export const PresentImages = () => {
+export const PresentImages = forwardRef((props = null, ref) => {
+  console.log(ref, "child");
   useParallaxCache();
   const LARGE_IMAGES = [
     {
@@ -269,7 +270,7 @@ export const PresentImages = () => {
           clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
         }}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center" ref={ref}>
           <Zoom clear>
             <p className="text-5xl flex justify-center items-center h-80 text-white">
               加入我们
@@ -341,4 +342,4 @@ export const PresentImages = () => {
       <Divider size="large"></Divider>
     </>
   );
-};
+});
