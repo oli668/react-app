@@ -142,7 +142,7 @@ const App = () => {
               <Switch>
                 <Route
                   exact
-                  path="/"
+                  path={["/", "/join", "/missions"]}
                   render={() => (
                     <div className="font-main_theme">
                       <IntroductionPage></IntroductionPage>

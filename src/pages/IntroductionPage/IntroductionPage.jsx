@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 import { NavBar } from "components/Header/NavBar";
+import { useHistory } from "react-router-dom";
 import { IntroductionPageNavItems } from "components/Header/data";
 import { MacbookPro } from "components/WithoutTailwind/Macbook";
 import { Carousel } from "./Carousel";
@@ -40,6 +41,7 @@ import { hideCocktailsPage } from "store/actions/header";
 // };
 
 export const IntroductionPage = () => {
+  const { location } = useHistory();
   const gradient = new Gradient();
   useEffect(() => {
     gradient.initGradient("#gradient-canvas");
@@ -48,7 +50,7 @@ export const IntroductionPage = () => {
   useEffect(() => {
     dispatch(hideCocktailsPage());
   }, []);
-
+  console.log(location.pathname);
   return (
     <>
       <div className="w-full flex justify-center relative h-96">
@@ -64,7 +66,7 @@ export const IntroductionPage = () => {
             <NavBar
               isSidemenu={false}
               navItems={IntroductionPageNavItems}
-              className="md:flex flex-row text-2xl"
+              className="md:flex flex-row"
             ></NavBar>
           </div>
         </div>

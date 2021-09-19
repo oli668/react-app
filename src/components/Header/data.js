@@ -213,14 +213,8 @@ export const homePageMenuMap = {
 
 export const IntroductionPageNavItems = [
   {
-    id: "about",
-    content: { ch: "关于我们", us: "About us" },
-    name: "about",
-    isSubmenu: true,
-  },
-  {
     id: "missions",
-    content: { ch: "我们的业务", us: "What we do" },
+    content: { ch: "关于我们", us: "What we do" },
     name: "do",
     isSubmenu: true,
   },
