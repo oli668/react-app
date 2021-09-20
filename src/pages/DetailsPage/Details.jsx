@@ -8,6 +8,7 @@ import { ProductCard } from "components/Card/ProductCard.jsx";
 import { ReviewCard } from "components/ReviewCard/ReviewCard";
 import { SVGGlass } from "./SVGGlass";
 import { decrypt } from "shared/DataUtils.js";
+import { VideoPlayer } from "components/VideoPlayer/VideoPlayer";
 export const Details = (props) => {
   const params = useParams();
   const language = useSelector((store) => store.header.language).toLowerCase();
@@ -17,6 +18,20 @@ export const Details = (props) => {
       return item._id === params.id;
     });
   })();
+  const playerRef = React.useRef(null);
+
+  const handlePlayerReady = (player) => {
+    playerRef.current = player;
+
+    // you can handle player events here
+    player.on("waiting", () => {
+      console.log("player is waiting");
+    });
+
+    player.on("dispose", () => {
+      console.log("player will dispose");
+    });
+  };
   const intl = useIntl();
   const {
     category,
@@ -205,6 +220,35 @@ export const Details = (props) => {
         </div>
       </div>
       {/* you might like to buy */}
+      <div className="font-bold text-lg mt-3 mx-4">
+        {intl.formatMessage({ id: "MAKE_VIDEO" })}
+      </div>
+      <Divider size="sm"></Divider>
+      <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center">
+          <VideoPlayer
+            options={{
+              autoplay: false,
+              controls: true,
+              responsive: true,
+              preload: false,
+              muted: true,
+              defaultMuted: true,
+              height: "400px",
+              poster: `https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/cocktails-good/img-${params.id}.webp`,
+              fluid: false,
+              sources: [
+                {
+                  src: `https://7265-react-oli-8ggs2ctm06f2f6a4-1305182210.tcb.qcloud.la/video-cocktails/v-${params.id}.mp4`,
+                  type: "video/mp4",
+                },
+              ],
+            }}
+            onReady={handlePlayerReady}
+          />
+        </div>
+      </div>
+      <Divider size="sm"></Divider>
       <div className="font-bold text-lg mt-3 mx-4">
         {intl.formatMessage({ id: "REVIEW" })}
       </div>
