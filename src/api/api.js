@@ -8,7 +8,6 @@ import {
 const app = cloudbase.init({
   env: ENV,
 });
-console.log(app);
 const auth = app.auth();
 export const loginCloudServer = async () => {
   await auth.anonymousAuthProvider().signIn();

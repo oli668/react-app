@@ -8,7 +8,9 @@ export const Footer = ({ footerStyle }) => {
       <div className={footerStyle.color}>
         <footer className="flex flex-wrap items-center justify-between p-3 m-auto">
           <div className="container mx-auto flex flex-col flex-wrap items-center justify-between text-xs md:text-base">
-            <ul className={`flex mx-auto text-center ${footerStyle.textColor}`}>
+            <ul
+              className={`flex mx-auto flex-wrap text-center ${footerStyle.textColor}`}
+            >
               <li
                 className="p-2 cursor-pointer hover:underline"
                 onClick={() => {
