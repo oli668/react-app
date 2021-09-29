@@ -36,6 +36,7 @@ const App = () => {
   const language = useSelector((store) => store.header.language);
   const isUserLogin = useSelector((store) => store.header.isShowLoginModal);
   const cocktailsDetails = useSelector((store) => store.cocktailsDetails);
+
   const isShowCocktails = useSelector(
     (store) => store.header.isShowCocktailsPage
   );
@@ -48,11 +49,9 @@ const App = () => {
   );
 
   useEffect(() => {
-    if (!cocktailsDetails.length) {
-      tcbFetchCocktailsDetails().then((res) => {
-        dispatch(saveCocktailsDetails(res.result));
-      });
-    }
+    tcbFetchCocktailsDetails().then((res) => {
+      dispatch(saveCocktailsDetails(res.result));
+    });
   }, []);
 
   useEffect(() => {
